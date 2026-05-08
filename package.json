@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://thesandfox.github.io/bandifesta",
+  "homepage": "https://wookly44.github.io/bandiFesta/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
