@@ -1,5 +1,10 @@
 import "./SubIntroPreservation_sec2.css";
 import SubIntroPreservationSubTitle from "./SubIntroPreservationSubTitle";
+import info1 from "/assets/info1.png";
+import infoArrow from "/assets/info_arrow.png";
+import infoPeople from "/assets/info_people.png";
+import info2 from "/assets/info2.png";
+import info3 from "/assets/info3.png";
 export default function SubIntroPreservation_sec2({}) {
   return (
     <>
@@ -9,7 +14,7 @@ export default function SubIntroPreservation_sec2({}) {
           <div className="flex SubIntroPreservation_sec2_first">
             <ul>
               <li>
-                <img src="/bandifesta/assets/info1.png" alt="응모접수" />
+                <img src={info1} alt="응모접수" />
               </li>
               <li>
                 응모 페이지
@@ -18,11 +23,11 @@ export default function SubIntroPreservation_sec2({}) {
               </li>
             </ul>
             <div>
-              <img src="/bandifesta/assets/info_arrow.png" alt="인포화살표" />
+              <img src={infoArrow} alt="인포화살표" />
             </div>
             <ul>
               <li>
-                <img src="/bandifesta/assets/info_people.png" alt="응모선택" />
+                <img src={infoPeople} alt="응모선택" />
               </li>
               <li>
                 응모 선택
@@ -31,11 +36,11 @@ export default function SubIntroPreservation_sec2({}) {
               </li>
             </ul>
             <div>
-              <img src="/bandifesta/assets/info_arrow.png" alt="인포화살표" />
+              <img src={infoArrow} alt="인포화살표" />
             </div>
             <ul>
               <li>
-                <img src="/bandifesta/assets/info2.png" alt="결제진행" />
+                <img src={info2} alt="결제진행" />
               </li>
               <li>
                 결제 진행
@@ -44,11 +49,11 @@ export default function SubIntroPreservation_sec2({}) {
               </li>
             </ul>
             <div>
-              <img src="/bandifesta/assets/info_arrow.png" alt="인포화살표" />
+              <img src={infoArrow} alt="인포화살표" />
             </div>
             <ul>
               <li>
-                <img src="/bandifesta/assets/info3.png" alt="응모완료" />
+                <img src={info3} alt="응모완료" />
               </li>
               <li>
                 응모(예매)

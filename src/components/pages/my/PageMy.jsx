@@ -9,13 +9,14 @@ import { MobileTab, MobileTabContainer } from "../../generic/MobileTab";
 import './pagemy.css';
 import { configContext } from '/src/App';
 import GenericButton from '/src/components/generic/GenericButton';
+import user2 from "/assets/user2.png";
 
 function UserInfo({kakaoUser,handleConfig}) {
 	const config = useContext(configContext);
 	let imgPath = ''
 	// if (kakaoUser===null||kakaoUser.profile.length<=0) {
 	if (kakaoUser===null) {
-		imgPath = '/bandifesta/assets/user2.png'
+		imgPath = user2
 	} else {
 		imgPath = kakaoUser.profile;
 	}

@@ -62,7 +62,7 @@
 	position: relative;
 	overflow: hidden;
 	background-color: #d9d9d9;
-	background-image: url('/bandifesta/assets/sparkle.png');
+	background-image: url('/assets/sparkle.png');
 	background-repeat: no-repeat;
 	background-size: 45%;
 	background-position: center;
@@ -168,7 +168,7 @@
 	font-weight: bold;
 }
 
-/* 조아요표시기 */
+/* 좋아요 표시기 */
 .likeIndicator {
 	display: flex;
 	align-items: center;

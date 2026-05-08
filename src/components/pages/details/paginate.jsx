@@ -1,10 +1,12 @@
 import ReactPaginate from 'react-paginate';
+import nextPage from "/assets/nextPage.png";
+import prevPage from "/assets/prevPage.png";
 
 export default function Paginate({pageCount, handlePageClick}){
     return <>
         <ReactPaginate
-            nextLabel={<img src="/bandifesta/assets/nextPage.png"/>}
-            previousLabel={<img src="/bandifesta/assets/prevPage.png"/>}
+            nextLabel={<img src={nextPage} alt='다음'/>}
+            previousLabel={<img src={prevPage} alt='이전'/>}
             nextLinkClassName="subNoticePageNext"
             previousLinkClassName="subNoticePagePrev"
 

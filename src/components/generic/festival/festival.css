@@ -14,7 +14,7 @@
 	width: 100%;
 	aspect-ratio: 1 / 1.414;
 	background-color: #ccc;
-	background-image: url('/bandifesta/assets/sparkle.png');
+	background-image: url('/assets/sparkle.png');
 	background-position: center;
 	background-size: 50%;
 	background-repeat: no-repeat;
@@ -56,7 +56,7 @@
 	}
 }
 
-/*축제리스트 필터*/
+/*축제리스트*/
 .festivalSelectContainer {
 	position: relative;
 }
@@ -95,7 +95,7 @@
 	height: 18px;
 	right: 16px;
 	top: 50%;
-	background-image: url('/bandifesta/assets/arrowGrey.png');
+	background-image: url('/assets/arrowGrey.png');
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -109,7 +109,7 @@
 	}
 }
 
-/* 축제조아요버튼 */
+/* 축제좋아요버튼*/
 .festivalLikeButton {
 	position: absolute;
 	bottom: 5px;

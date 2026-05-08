@@ -1,4 +1,5 @@
 import GenericButton from '../../generic/GenericButton'
+import arrowGrey from "/assets/arrowGrey.png";
 
 export default function MyQNAList({ setPage, currentItems, setIdxs, leng, answer, click}){
 
@@ -32,7 +33,7 @@ export default function MyQNAList({ setPage, currentItems, setIdxs, leng, answer
                         <li><p className={answerClass(item)}>{answered(item)}</p></li>
                         <li>{item.title}</li>
                         <li>{item.time}</li>
-                        <li><img className='notiArrow' src="/bandifesta/assets/arrowGrey.png"/></li>
+                        <li><img className='notiArrow' src={arrowGrey} alt='arrow'/></li>
                     </ul>
             )})}
         </div>

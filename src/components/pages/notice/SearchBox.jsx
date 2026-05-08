@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { editContext } from "../../../App";
+import glassSearch from "/assets/glass_search.png";
 
 export default function SubNoticeSearch(){
     
@@ -19,7 +20,7 @@ export default function SubNoticeSearch(){
             <div className="noticeSearchBar">
                 <div className="SearchBox">
                     <input type="text" placeholder="검색어를 입력해 주세요." className="fontMain" value={search} onChange={searchChange}/>
-                    <button onClick={searchBtn}><img src="/bandifesta/assets/glass_search.png"/></button>
+                    <button onClick={searchBtn}><img src={glassSearch} alt='검색'/></button>
                 </div>
             </div>
         </div>

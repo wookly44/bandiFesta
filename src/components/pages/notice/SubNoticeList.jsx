@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import {Routes, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import arrowGrey from "/assets/arrowGrey.png";
 
 function noticeList(data){
 
@@ -16,7 +17,7 @@ function noticeList(data){
             <li className='notiTitle'>
                 <Link to={`/notice/detail/${data.id}`} onClick={onIncrease}>
                     <span className='notiTitTxt'>{data.title}</span>
-                    <img className='notiArrow' src="/bandifesta/assets/arrowGrey.png" alt="" />
+                    <img className='notiArrow' src={arrowGrey} alt="notiArrow" />
                 </Link>
             </li>
             <li className='notiWriter'>{data.name}</li>

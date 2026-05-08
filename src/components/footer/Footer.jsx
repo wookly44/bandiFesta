@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
 import "./footer.css";
+// 이미지 경로
+import fot_bg from "/assets/fot_bg.png"
+import fot_bg1 from "/assets/fot_bg1.png"
+import fotLogo1 from "/assets/fotLogo1.png"
+import fotLogo2 from "/assets/fotLogo2.png"
+import fotLogo3 from "/assets/fotLogo3.png"
+import fotLogo4 from "/assets/fotLogo4.png"
+import logoGrey from "/assets/logoGrey.png"
 
 export default function Footer({}) {
   const [active, setActive] = useState(false);
@@ -23,13 +31,13 @@ export default function Footer({}) {
     <>
       <div className="footer">
         <div className="footer_top">
-          <img className={`footer_top_image ${active ? "active" : ""}`} src="/bandifesta/assets/fot_bg.png" alt="푸터사람들" />
-          <img className={`footer_top_image_mobile ${active ? "active" : ""}`} src="/bandifesta/assets/fot_bg1.png" alt="푸터사람들" />
+          <img className={`footer_top_image ${active ? "active" : ""}`} src={fot_bg} alt="푸터사람들" />
+          <img className={`footer_top_image_mobile ${active ? "active" : ""}`} src={fot_bg1} alt="푸터사람들" />
         </div>
         <div className="footer_bottom">
           <div className="flex footer_wrap">
             <div className="footer_logo">
-              <img src="/bandifesta/assets/logoGrey.png" alt="회색로고" />
+              <img loading="lazy" src={logoGrey} alt="회색로고" />
             </div>
             <div className="footer_info_wrap">
               <ul className="footer_info_01">
@@ -51,16 +59,16 @@ export default function Footer({}) {
               </ul>
               <ul className="footer_APILOGO">
                 <li>
-                  <img src="/bandifesta/assets/fotLogo3.png" alt="" />
+                  <img loading="lazy" src={fotLogo3} alt="api logo" />
                 </li>
                 <li>
-                  <img src="/bandifesta/assets/fotLogo2.png" alt="" />
+                  <img loading="lazy" src={fotLogo2} alt="api logo" />
                 </li>
                 <li>
-                  <img src="/bandifesta/assets/fotLogo1.png" alt="" />
+                  <img loading="lazy" src={fotLogo1} alt="api logo" />
                 </li>
                 <li>
-                  <img src="/bandifesta/assets/fotLogo4.png" alt="" />
+                  <img loading="lazy" src={fotLogo4} alt="api logo" />
                 </li>
               </ul>
             </div>

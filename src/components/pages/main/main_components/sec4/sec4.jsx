@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./sec4.css";
 import { Autoplay } from "swiper/modules";
+import logo2 from "/assets/logo2.png"
 
 function MainSec4() {
   const config = useContext(configContext);
@@ -131,7 +132,7 @@ function MainSec4() {
         </div>
         <div className="Main_sec4_bottom">
           <div className={`Main_sec4_bottom_logoMoon ${active ? "active" : ""}`}>
-            <img src="/bandifesta/assets/logo2.png" alt="달님" />
+            <img src={logo2} alt="달님" />
           </div>
         </div>
         

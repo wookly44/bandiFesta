@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Course.css";
+import peopleImg from "/assets/people.png";
+import gbgMap from "/assets/gbg_map02.jpg";
 import "../../../generic/lefttab.css";
 
 
@@ -123,7 +125,7 @@ function Course({ currentSet }) {
   const [points, setPoints] = useState(points_1440);
   const [course_wrap_height, setCourse_wrap_height] = useState()
   useEffect(() => {
-    axios.get("/bandifesta/JSON/gbg_info.json").then((response) => {
+    axios.get("/JSON/gbg_info.json").then((response) => {
       setData(response.data);
     });
   }, []);
@@ -258,7 +260,7 @@ function Course({ currentSet }) {
             <div className={`course_line_bottom ${currentSet}`}></div>
             <div>
               <img
-                src="/bandifesta/assets/people.png"
+                src={peopleImg}
                 alt="people"
                 className="people-image"
                 style={(window.innerWidth >= 1024) ?
@@ -306,7 +308,7 @@ function Course({ currentSet }) {
           <p>{data[currentKey]?.text}</p>
         </div>
         <div className="course_gbg_map">
-          <img src="/bandifesta/assets/gbg_map02.jpg" alt="" />
+          <img src={gbgMap} alt="지도" />
         </div>
       </div>
     </>

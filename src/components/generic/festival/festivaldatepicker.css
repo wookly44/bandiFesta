@@ -103,7 +103,7 @@
 .festivalDatePicker .btn {
 	width: 16px;
 	aspect-ratio: 1;
-	background-image: url('/bandifesta/assets/arrowGrey.png');
+	background-image: url('/assets/arrowGrey.png');
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;

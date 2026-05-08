@@ -3,6 +3,9 @@ import { faqContext } from './SubNoticeFAQ' ;
 import { editContext } from './SubNoticeFAQ' ;
 import { configContext } from "../../../App";
 import GenericButton from '../../generic/GenericButton';
+import question from "/assets/question.png";
+import nextPage from "/assets/nextPage.png";
+import answer from "/assets/answer.png";
 
 export default function FAQPageList({currentItems}){
     const datas = useContext(faqContext);
@@ -21,14 +24,14 @@ export default function FAQPageList({currentItems}){
                 <li className="faqLists" key={item.idx}>
                     <div className='faqListsQuestion' onClick={()=>scrollEvent(idx)}>
                         <div className="faqEach">
-                            <span><img src="/bandifesta/assets/question.png" alt='question'/></span>
+                            <span><img src={question} alt='question'/></span>
                             <div><p className='fontMain'>{item.tit}</p></div>
-                            <span><img src="/bandifesta/assets/nextPage.png" className={idx === ans ? 'AnswerRotate': ''}/></span>
+                            <span><img src={nextPage} className={idx === ans ? 'AnswerRotate': ''} alt='nextPage'/></span>
                         </div>
                     </div>
                     <div className={`faqListsAnswer ${idx === ans ? 'faqListsAnswerActive' : ''}`}>
                         <div className="faqEach">
-                            <span><img src="/bandifesta/assets/answer.png" alt='answer'/></span>
+                            <span><img src={answer} alt='answer'/></span>
                             <div><p className='fontMain'>{item.txt}</p></div>
                         </div>
                     </div>

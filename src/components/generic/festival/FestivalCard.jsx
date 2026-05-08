@@ -50,7 +50,7 @@ function FestivalLikeButton({festivalId,userId,onChange}) {
 		})
 	}
 	return <div className='festivalLikeButton' onClick={likeRequest}>
-		<img className={'heart'} src={`/bandifesta/assets/${pressed?'heartFill':'heart'}.png`} alt={'축제 좋아요 버튼'}/>
+		<img className={'heart'} src={`/assets/${pressed?'heartFill':'heart'}.png`} alt={'축제 좋아요 버튼'}/>
 	</div>
 }
 

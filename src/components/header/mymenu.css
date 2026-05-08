@@ -1,5 +1,5 @@
 .myMenuButton {
-	background-image: url('/bandifesta/assets/user1.png');
+	background-image: url('/assets/user1.png');
 	background-size: 100%;
 	width: 40px;
 	aspect-ratio: 1;
@@ -13,7 +13,7 @@
 		width:30px;
 	}
 	@media screen and (max-width:1023px) {
-		background-image: url('/bandifesta/assets/burger-bar.png');
+		background-image: url('/assets/burger-bar.png');
 		width: calc(100vw * (24 / 400));
 	}
 }
@@ -90,7 +90,7 @@
 
 .myMenuContainerWrapper .close {
 	cursor: pointer;
-	background-image: url('/bandifesta/assets/closeBtn.png');
+	background-image: url('/assets/closeBtn.png');
 	background-size: 100%;
 	aspect-ratio: 1;
 	width: 40px;
@@ -109,7 +109,7 @@
 
 .myMenuContainerWrapper .logout {
 	cursor: pointer;
-	font-family: 'NotoSans';
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #6e6e6e;
 	font-size: 14px;
 	text-decoration: underline;
@@ -157,7 +157,7 @@
 }
 
 .serviceNavItem>.arrow {
-	background-image: url('/bandifesta/assets/arrowBlack.png');
+	background-image: url('/assets/arrowBlack.png');
 	background-size: 100%;
 	aspect-ratio: 1;
 	width: 16px;

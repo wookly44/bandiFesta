@@ -1,12 +1,13 @@
 import './festivalwidget.css';
 import { Link } from 'react-router-dom';
+import sparkle from "/assets/sparkle.png";
 
 function FestivalWidget({festival}) {
 	return <>{
 		festival
 		?<Link className="festivalWidget" to={`/festival/detail/${festival?festival.festival_id:'0'}`}>
 			<div className='left fontMain'>
-				<img src="/bandifesta/assets/sparkle.png"/>
+				<img src={sparkle} alt='sparkle'/>
 				<p>{festival===null?'':festival.title}</p>
 			</div>
 			<div className='right fontMain'>
@@ -20,7 +21,7 @@ function FestivalWidget({festival}) {
 function FestivalWidgetList({festivals}) {
 	return <div className="festivalWidgetList">
 		{festivals.map((festival,index)=>{
-			return <FestivalWidget festival={festival} key={(festival===null)?index:festival.festival_id}/>
+			return <FestivalWidget festival={festival} key={(festival===null)?index:`${festival.festival_id}_${index}`}/>
 		})}
 	</div>
 }

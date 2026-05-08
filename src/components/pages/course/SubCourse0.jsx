@@ -1,4 +1,5 @@
 import "./SubCourse0.css"
+import gbgMap01 from "/assets/gbg_map01.jpg";
 export default function SubCourse0({}) {
 	return <>
 	<div>
@@ -6,7 +7,7 @@ export default function SubCourse0({}) {
 		<div><a href="https://www.ticketlink.co.kr/product/49248"></a></div>
 	</div>
 	<div>
-		<img src="/bandifesta/assets/gbg_map01.jpg" alt="" />
+		<img src={gbgMap01} alt="40분 관람코스" />
 	</div>
 	</>
 }

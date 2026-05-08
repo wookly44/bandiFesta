@@ -3,7 +3,7 @@
 	width:100vw;
 	height:calc(80vw * (1080 / 1920));
 	overflow: hidden;
-	background-image: url('/bandifesta/assets/main_sec4_bg.png');
+	background-image: url('/assets/main_sec4_bg.png');
 	background-size: 100%;
 	background-position: bottom;
 	& .loadingBackdrop {
@@ -13,7 +13,7 @@
 		width: 125%;
 		height: 125%;
 		background-color: #999;
-		background-image: url('/bandifesta/assets/scene_capture.png');
+		background-image: url('/assets/scene_capture.png');
 		background-size: 85%;
 		background-position: center;
 		background-repeat: no-repeat;

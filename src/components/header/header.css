@@ -110,7 +110,7 @@ header.hidden.alter {
 .languageSelector .arrow {
 	width: 16px;
 	aspect-ratio: 1;
-	background-image: url('/bandifesta/assets/arrowWhite.png');
+	background-image: url('/assets/arrowWhite.png');
 	background-size: 100%;
 	transform: rotate(90deg);
 	transition: 0.25s;

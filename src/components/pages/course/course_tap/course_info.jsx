@@ -1,5 +1,7 @@
 import React from "react";
 import "./CourseInfo.css";
+import gbgMap from "/assets/gbg_map02.jpg";
+import peopleImg from "/assets/people.png";
 
 function CourseInfo({ getCourseTitle, points, currentSet, ClickInfo, data, currentKey }) {
   return (
@@ -11,11 +13,11 @@ function CourseInfo({ getCourseTitle, points, currentSet, ClickInfo, data, curre
         </div>
       </div>
       <div>
-        <img src="/bandifesta/assets/gbg_map02.jpg" alt="" />
+        <img src={gbgMap} alt="지도" />
       </div>
       <div>
         <img
-          src="/bandifesta/assets/people.png"
+          src={peopleImg}
           alt="people"
           className="path-image"
         />

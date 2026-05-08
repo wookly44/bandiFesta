@@ -1,4 +1,5 @@
 import "./SubIntroMainSec1.css";
+import nightStarLogo from "/assets/night_star_logo.png";
 export default function SubIntroMainSec1({}) {
   return (
     <>
@@ -6,7 +7,7 @@ export default function SubIntroMainSec1({}) {
         <div>
           <h3>밤 깊은 경복궁에 여러분을 초대합니다.</h3>
           <div className="SubIntroMainSec1_img1">
-            <img src="/bandifesta/assets/night_star_logo.png"></img>
+            <img src={nightStarLogo} alt="별빛야행"></img>
           </div>
           <p>
             경복궁의 가장 깊은 곳<br />

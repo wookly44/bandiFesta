@@ -1,5 +1,7 @@
 import "./sec3_mobile.css";
 import { useNavigate } from "react-router-dom";
+import courseBtn from "/assets/btn4001.png";
+import noticeBtn from "/assets/btn4002.png";
 function MainSec3_mobile() {
 
     const sec3_button_notice = () => {
@@ -23,7 +25,7 @@ function MainSec3_mobile() {
             <p>체험 코스를 확인해보세요</p>
           </div>
           <div>
-            <img src="/bandifesta/assets/btn4001.png" alt="체험코스" />
+            <img src={courseBtn} alt="체험코스" />
           </div>
         </button>
         <button onClick={sec3_button_notice} className="flex MainSec3_mobile_button_bottom">
@@ -32,7 +34,7 @@ function MainSec3_mobile() {
             <p>공지 사항을 확인해보세요</p>
           </div>
           <div>
-            <img src="/bandifesta/assets/btn4002.png" alt="공지사항" />
+            <img src={noticeBtn} alt="공지사항" />
           </div>
         </button>
       </section>
