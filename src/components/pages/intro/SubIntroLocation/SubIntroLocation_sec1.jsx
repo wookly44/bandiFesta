@@ -1,4 +1,3 @@
-import "./SubIntroLocation_sec1.css";
 import SubIntroPreservationSubTitle from "../SubIntroPreservationCompo/SubIntroPreservationSubTitle"
 export default function SubIntroLocation_sec1({}) {
   return (

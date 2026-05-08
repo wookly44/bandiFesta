@@ -7,7 +7,6 @@ import GenericTag from "../../generic/GenericTag";
 import { getFestivalLikeCount } from "../../../api_utils/festivalUtil";
 import { configContext } from '/src/App';
 import { FestivalLikeButton } from "../../generic/festival/FestivalCard";
-import GoogleMapComponent from "../../generic/googlemap/GoogleMapComponent";
 import GenericButton from '/src/components/generic/GenericButton'
 import Loading from '/src/components/generic/Loading'
 import GoBack from "../../generic/GoBack";
@@ -20,7 +19,6 @@ function LikeIndicator({festival}) {
 		getFestivalLikeCount({
 			festivalId:festival.festival_id
 		},(response)=>{
-			// console.log(response.data);
 			setCount(response.data);
 		})
 	},[festival])
@@ -48,7 +46,6 @@ function FestivalContent({festival}) {
 	const config = useContext(configContext);
 	const infoTextRef = useRef(null);
 	const containerRef = useRef(null);
-	const navigate = useNavigate();
 	const [tagVariation,setTagVariation] = useState({
 		value:0,
 		string:''
@@ -60,11 +57,10 @@ function FestivalContent({festival}) {
 		'마감',
 		'진행기간',
 		'장소',
-		'주최',
+		'요금',
 		'홈페이지',
 		'문의전화',
 		'전시내용',
-		'오시는 길',
 		'목록으로'
 	];
 	//
@@ -76,11 +72,10 @@ function FestivalContent({festival}) {
 			'expired',
 			'Duration',
 			'Location',
-			'Organizer',
+			'Price',
 			'Website',
 			'Contact Number',
 			'Description',
-			'Directions',
 			'Back'
 		];
 		break;
@@ -91,11 +86,10 @@ function FestivalContent({festival}) {
 			'終了',
 			'期間',
 			'場所',
-			'主催',
+			'料金',
 			'ホームページ',
 			'問い合わせ電話番号',
 			'内容',
-			'アクセス',
 			'戻る'
 		];
 		break;
@@ -108,7 +102,6 @@ function FestivalContent({festival}) {
 		let startDate = new Date(festival.start_date);
 		let today = new Date();
 		let endDate = new Date(festival.end_date);
-		// console.log(festival);
 		if(startDate>today) {
 			setTagVariation({
 				value:1,
@@ -125,8 +118,7 @@ function FestivalContent({festival}) {
 				string:localeString[0]
 			})
 		}
-		//인포
-		infoTextRef.current.innerHTML = festival.infotext;
+
 	},[festival,config.language]);
 	return <div className="festivalDetail" ref={containerRef}>
 		{/* 상단 제목 */}
@@ -145,10 +137,10 @@ function FestivalContent({festival}) {
 		<div className="middle">
 			<div className="imgContainer">
 				{
-					festival.image1
+					festival.image
 					?<>
-						<img className='blur' src={String(festival.image1).replace('http://','https://')}/>
-						<img className='upper' src={String(festival.image1).replace('http://','https://')}/>
+						<img className='blur' src={String(festival.image).replace('http://','https://')}/>
+						<img className='upper' src={String(festival.image).replace('http://','https://')}/>
 					</>
 					:<>
 					</>
@@ -170,10 +162,10 @@ function FestivalContent({festival}) {
 						{localeString[4]}
 					</div>
 					<div className="right fontMain">
-						{festival.eventplace}
+						{festival.address}
 					</div>
 				</div>
-				{/* 주최 */}
+				{/* 요굼 */}
 				<div className="descriptionRow">
 					<div className="left fontMain">
 						{localeString[5]}
@@ -181,8 +173,8 @@ function FestivalContent({festival}) {
 					<div className="right fontMain">
 						{festival.sponsor1}
 						{
-							festival.sponsor2
-							?<><br/>{festival.sponsor2}</>
+							festival.fee
+							?<>{festival.fee}</>
 							:<></>
 						}
 					</div>
@@ -211,23 +203,13 @@ function FestivalContent({festival}) {
 						{localeString[8]}
 					</div>
 					<div className="right fontMain" ref={infoTextRef}>
-						{/* {festival.infotext} */}
+						{festival.content}
 					</div>
 				</div>
 			</div>
 		</div>
-		{/* 꾸글지도 */}
 		<div className="bottom">
-			<div className="fontSubTitle">{localeString[9]}</div>
-			{festival
-				?<GoogleMapComponent 
-					mapX={festival.map_x} 
-					mapY={festival.map_y}
-					title={festival.title}
-				/>
-				:<></>
-			}
-			<GenericButton to={'/festival/gallery'}>{localeString[10]}</GenericButton>
+			<GenericButton to={'/festival/gallery'}>{localeString[9]}</GenericButton>
 		</div>
 	</div>
 }

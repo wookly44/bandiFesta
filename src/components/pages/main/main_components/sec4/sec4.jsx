@@ -1,65 +1,68 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import { getFestivals } from "/src/api_utils/festivalUtil";
 import { configContext } from "/src/App";
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FestivalCard } from "/src/components/generic/festival/FestivalCard";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./sec4.css";
-import { Autoplay } from "swiper/modules";
 import logo2 from "/assets/logo2.png"
 
 function MainSec4() {
-  const config = useContext(configContext);
-  const [festivals, setFestivals] = useState([]);
-  const [active, setActive] = useState(false);
-  const [fontSize, setFontSize] = useState(18)
-  const textRef = useRef()
-  
-  useEffect(() => {
+    const config = useContext(configContext);
+    const [festivals, setFestivals] = useState([]);
+    const [loopedFestivals, setLoopedFestivals] = useState([]);
+    const [fontSize, setFontSize] = useState(18)
+    const textRef = useRef()
+
+    useEffect(() => {
     const changeFontSize = () => {
-      if (textRef.current) {
+        if (textRef.current) {
         const { clientWidth } = textRef.current;
         const maxWidth = clientWidth;
         const baseFontSize = 16;
         let newFontSize = baseFontSize;
 
         while (textRef.current.scrollWidth > maxWidth && newFontSize > 12) {
-          newFontSize -= 1;
-          textRef.current.style.fontSize = `${newFontSize}px`;
+            newFontSize -= 1;
+            textRef.current.style.fontSize = `${newFontSize}px`;
         }
-
         setFontSize(newFontSize);
-      }
+        }
     };
-
     changeFontSize();
     window.addEventListener('resize', changeFontSize);
-
     return () => {
-      window.removeEventListener('resize', changeFontSize);
+        window.removeEventListener('resize', changeFontSize);
     };
-  }, []);
+    }, []);
 
-
-
-
-  useEffect(() => {
+    useEffect(() => {
+    // API 호출 (동일)
     getFestivals(
-      {
+        {
         itemsPerPage: 10,
         pageNum: 1,
         language: config.language,
         periodType: 1,
         sortMethod: 0,
-      },
-      (response) => {
-        setFestivals(response.data);
-      },
-      (error) => {
-        console.log(error);
-      }
+        },
+        (response) => {
+        const data = response.data || [];
+        setFestivals(data);
+        if (data.length > 0) {
+            const minCount = 14;
+            let looped = [...data];
+            while (looped.length < minCount) {
+            looped = [...looped, ...data];
+            }
+            setLoopedFestivals(looped.map((f, i) => ({ ...f, _loopKey: `${f.festival_id}_${i}` })));
+        }
+        },
+        (error) => {
+        // console.log(`error: ${error}`);
+        }
     );
 
     const handleScrollDown = () => {
@@ -78,14 +81,12 @@ function MainSec4() {
     };
   }, [config.language]);
 
-
-  return (
-    <>
-      <div className="Main_sec4">
+    return (
+    <div className="Main_sec4">
         <div>
-          <h5>인기있는 행사</h5>
-          <p>다양한 축제를 통해 각 지역의 독특한 문화와 전통을 만나보세요!</p>
-          <Swiper
+            <h5>인기있는 행사</h5>
+            <p>다양한 축제를 통해 각 지역의 독특한 문화와 전통을 만나보세요!</p>
+            <Swiper
             loop={true}
             slidesPerView={6.8}
             spaceBetween={15}
@@ -96,49 +97,25 @@ function MainSec4() {
             }}
             modules={[Autoplay]}
             className="mySwiper sec4Swiper"
-          >
-            {festivals.map((festival) => (
-              <SwiperSlide key={festival.festival_id}>
-                <FestivalCard
-                  festival={festival}
-                  disableTag={true}
-                  fontSize={fontSize}
-                ></FestivalCard>
-              </SwiperSlide>
+            >
+            {loopedFestivals.map((festival) => (
+                <SwiperSlide key={festival._loopKey}>
+                    <FestivalCard
+                        festival={festival}
+                        disableTag={true}
+                        fontSize={fontSize}
+                    />
+                </SwiperSlide>
             ))}
-          </Swiper>
-          <Swiper
-            loop={true}
-            slidesPerView={2}
-            spaceBetween={10}
-            centeredSlides={true}
-            autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            className="mySwiper sec4SwiperMobile"
-          >
-            {festivals.map((festival) => (
-              <SwiperSlide key={festival.festival_id}>
-                <FestivalCard
-                  festival={festival}
-                  disableTag={true}
-                  fontSize={fontSize}
-                ></FestivalCard>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            </Swiper>
         </div>
         <div className="Main_sec4_bottom">
           <div className={`Main_sec4_bottom_logoMoon ${active ? "active" : ""}`}>
             <img src={logo2} alt="달님" />
           </div>
         </div>
-        
-      </div>
-    </>
-  );
+    </div>
+    );
 }
 
 export default MainSec4;

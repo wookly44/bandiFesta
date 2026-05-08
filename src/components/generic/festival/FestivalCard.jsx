@@ -110,13 +110,7 @@ function FestivalCard({festival,disableTag,userId,fontSize}) {
 			})
 		}
 	},[])
-	//
-	// const navigateCallback = ()=>{
-	// 	if (!festival.festival_id) {return;}
-	// 	navigate(`/festival/detail/${festival.festival_id}`);
-	// }
-	//
-	// Link
+
 	return <div className={`festivalCard${(festival===null)?' disabled':''}`}>
 		<div className='festivalCardTop'>
 			{
@@ -124,8 +118,8 @@ function FestivalCard({festival,disableTag,userId,fontSize}) {
 				?<Link to={`/festival/detail/${festival?festival.festival_id:'0'}`}>
 					{/* 썸네일 */}
 					{
-						festival.image1
-						?<img src={String(festival.image1).replace('http://','https://')}
+						festival.image
+						?<img src={String(festival.image).replace('http://','https://')}
 						alt={festival.title} 
 						className='festivalCardImage'
 						ref={imgElement}/>
@@ -163,10 +157,9 @@ function FestivalCard({festival,disableTag,userId,fontSize}) {
 
 function FestivalCardList({festivals,className}) {
 	const config = useContext(configContext);
-	// console.log(config);
 	return <div className={`festivalCardList${className?(' '+className):''}`}>
 		{festivals.map((festival,index)=>{
-			return <FestivalCard key={(festival===null)?index:festival.festival_id} festival={festival} userId={(config.user)?config.user.id:undefined}/>
+			return <FestivalCard key={festival ? `${festival.festival_id}_${index}` : index} festival={festival} userId={(config.user)?config.user.id:undefined}/>
 		})}
 	</div>
 }
