@@ -3,7 +3,7 @@
     {
       "festival_id": 1,
       "title": "경복궁 별빛야행(하반기)",
-      "image": "/assets/festival1.png",
+      "image": "/bandiFesta/assets/festival1.png",
       "start_date": "2025-10-15",
       "end_date": "2025-09-30",
       "address": "경복궁 일원",
@@ -15,7 +15,7 @@
     {
       "festival_id": 2,
       "title": "가리비 수산물 축제",
-      "image": "/assets/festival2.png",
+      "image": "/bandiFesta/assets/festival2.png",
       "start_date": "2024-10-25",
       "end_date": "2024-10-27",
       "address": "경남 고성군 남포항 일원",
@@ -27,7 +27,7 @@
     {
       "festival_id": 3,
       "title": "심마니 농산물 축제",
-      "image": "/assets/festival3.png",
+      "image": "/bandiFesta/assets/festival3.png",
       "start_date": "2024-10-25",
       "end_date": "2024-10-27",
       "address": "경남 함양 상림공원 일원",
@@ -39,7 +39,7 @@
     {
       "festival_id": 4,
       "title": "보령 머드 축제",
-      "image": "/assets/festival4.jpg",
+      "image": "/bandiFesta/assets/festival4.jpg",
       "start_date": "2024-10-11",
       "end_date": "2024-10-13",
       "address": "충청남도 보령시 신흑동 대천해수욕장 일대",

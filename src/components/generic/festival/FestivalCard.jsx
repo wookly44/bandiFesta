@@ -6,6 +6,8 @@ import { likeFestival } from '/src/api_utils/festivalUtil';
 import { configContext } from '/src/App';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginRequest } from '../../../api_utils/loginUtil';
+import heartFill from '/bandiFesta/assets/heartFill.png';
+import heart from '/bandiFesta/assets/heart.png';
 
 function FestivalLikeButton({festivalId,userId,onChange}) {
 	const [pressed,setPressed] = useState(false);
@@ -50,7 +52,7 @@ function FestivalLikeButton({festivalId,userId,onChange}) {
 		})
 	}
 	return <div className='festivalLikeButton' onClick={likeRequest}>
-		<img className={'heart'} src={`/assets/${pressed?'heartFill':'heart'}.png`} alt={'축제 좋아요 버튼'}/>
+		<img className={'heart'} src={pressed?heartFill:heart} alt={'축제 좋아요 버튼'}/>
 	</div>
 }
 

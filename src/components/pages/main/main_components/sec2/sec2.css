@@ -1,6 +1,6 @@
 .sec2{
     width: 100%;
-    background-image: url("/assets/main_sec2_bg.png");
+    background-image: url("/bandiFesta/assets/main_sec2_bg.png");
     padding : 100px 0;
     color:var(--color-white);
     flex-direction: column;

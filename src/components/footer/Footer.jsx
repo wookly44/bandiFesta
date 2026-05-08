@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "./footer.css";
 // 이미지 경로
-import fot_bg from "/assets/fot_bg.png"
-import fot_bg1 from "/assets/fot_bg1.png"
-import fotLogo1 from "/assets/fotLogo1.png"
-import fotLogo2 from "/assets/fotLogo2.png"
-import fotLogo3 from "/assets/fotLogo3.png"
-import fotLogo4 from "/assets/fotLogo4.png"
-import logoGrey from "/assets/logoGrey.png"
+import fot_bg from "/bandiFesta/assets/fot_bg.png"
+import fot_bg1 from "/bandiFesta/assets/fot_bg1.png"
+import fotLogo1 from "/bandiFesta/assets/fotLogo1.png"
+import fotLogo2 from "/bandiFesta/assets/fotLogo2.png"
+import fotLogo3 from "/bandiFesta/assets/fotLogo3.png"
+import fotLogo4 from "/bandiFesta/assets/fotLogo4.png"
+import logoGrey from "/bandiFesta/assets/logoGrey.png"
 
 export default function Footer({}) {
   const [active, setActive] = useState(false);

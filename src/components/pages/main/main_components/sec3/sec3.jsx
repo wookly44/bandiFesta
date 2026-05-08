@@ -1,8 +1,8 @@
 import "./sec3.css";
 import Sec3_top from './sec3_compo/sec3_top'
 import Sec3_bottom from './sec3_compo/sec3_bottom'
-import leftObj from "/assets/left_obj2.png";
-import rightObj from "/assets/right_obj1.png";
+import leftObj from "/bandiFesta/assets/left_obj2.png";
+import rightObj from "/bandiFesta/assets/right_obj1.png";
 function MainSec3() {
   return (
     <>

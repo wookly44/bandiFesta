@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import { Water } from 'three-stdlib';
 import * as THREE from 'three';
 import { useInView } from "react-intersection-observer";
-import waterNormalsFile from '/src/assets/waternormals.jpeg';
+import waterNormalsFile from '/bandiFesta/src/assets/waternormals.jpeg';
 
 extend({ Water });
 

@@ -1,5 +1,5 @@
 import GenericButton from '../../generic/GenericButton'
-import arrowGrey from "/assets/arrowGrey.png";
+import arrowGrey from "/bandiFesta/assets/arrowGrey.png";
 
 export default function MyQNAList({ setPage, currentItems, setIdxs, leng, answer, click}){
 

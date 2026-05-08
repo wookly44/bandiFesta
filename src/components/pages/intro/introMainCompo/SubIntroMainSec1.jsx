@@ -1,5 +1,5 @@
 import "./SubIntroMainSec1.css";
-import nightStarLogo from "/assets/night_star_logo.png";
+import nightStarLogo from "/bandiFesta/assets/night_star_logo.png";
 export default function SubIntroMainSec1({}) {
   return (
     <>

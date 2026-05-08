@@ -1,6 +1,6 @@
 import './festivalwidget.css';
 import { Link } from 'react-router-dom';
-import sparkle from "/assets/sparkle.png";
+import sparkle from "/bandiFesta/assets/sparkle.png";
 
 function FestivalWidget({festival}) {
 	return <>{

@@ -6,15 +6,15 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { loginRequest } from "/src/api_utils/loginUtil"
 import GenericIconButton from '../generic/GenericIconButton';
 import { configContext } from '../../App';
-import kakaoIcon from "/assets/kakao.png";
-import user2Icon from "/assets/user2.png";
-import heartFillIcon from "/assets/heartFill.png";
-import question2Icon from "/assets/question2.png";
-import balloonIcon from "/assets/ballon.png";
-import shoesIcon from "/assets/shoes.png";
-import noticeIcon from "/assets/notice.png";
-import locationIcon from "/assets/location.png";
-import logo1 from "/assets/logo1.png";
+import kakaoIcon from "/bandiFesta/assets/kakao.png";
+import user2Icon from "/bandiFesta/assets/user2.png";
+import heartFillIcon from "/bandiFesta/assets/heartFill.png";
+import question2Icon from "/bandiFesta/assets/question2.png";
+import balloonIcon from "/bandiFesta/assets/ballon.png";
+import shoesIcon from "/bandiFesta/assets/shoes.png";
+import noticeIcon from "/bandiFesta/assets/notice.png";
+import locationIcon from "/bandiFesta/assets/location.png";
+import logo1 from "/bandiFesta/assets/logo1.png";
 
 function LanguageSelector({handleConfig}) {
 	const [visible,setVisible] = useState(false);

@@ -1,6 +1,6 @@
 import ReactPaginate from 'react-paginate';
-import nextPage from "/assets/nextPage.png";
-import prevPage from "/assets/prevPage.png";
+import nextPage from "/bandiFesta/assets/nextPage.png";
+import prevPage from "/bandiFesta/assets/prevPage.png";
 
 export default function Paginate({pageCount, handlePageClick}){
     return <>

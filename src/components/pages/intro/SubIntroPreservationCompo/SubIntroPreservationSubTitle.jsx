@@ -1,5 +1,5 @@
 import "./SubIntroPreservationSubTitle.css";
-import highlight1 from "/assets/highlight1.png";
+import highlight1 from "/bandiFesta/assets/highlight1.png";
 export default function SubIntroPreservation_sec1({SubTitle}) {
   return (
     <>

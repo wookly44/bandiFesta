@@ -1,5 +1,5 @@
 import "./SubIntroMainSec2.css"
-import suraImg from "/assets/20230411115006105_6807NZLA.png";
+import suraImg from "/bandiFesta/assets/20230411115006105_6807NZLA.png";
 export default function SubIntroMainSec2({ }) {
 	return <>
 		<div className="SubIntroMainSec2_wrap">

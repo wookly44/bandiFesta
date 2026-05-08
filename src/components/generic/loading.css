@@ -20,7 +20,7 @@
 
 .loadingIcon {
 	flex:1;
-	background-image: url('/assets/loading.png');
+	background-image: url('/bandiFesta/assets/loading.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: center;

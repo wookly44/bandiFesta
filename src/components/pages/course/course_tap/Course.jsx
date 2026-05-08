@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Course.css";
-import peopleImg from "/assets/people.png";
-import gbgMap from "/assets/gbg_map02.jpg";
+import peopleImg from "/bandiFesta/assets/people.png";
+import gbgMap from "/bandiFesta/assets/gbg_map02.jpg";
 import "../../../generic/lefttab.css";
 
 

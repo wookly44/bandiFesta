@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import arrowGrey from "/assets/arrowGrey.png";
+import arrowGrey from "/bandiFesta/assets/arrowGrey.png";
 
 function noticeList(data){
 

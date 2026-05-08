@@ -27,7 +27,7 @@
 .goto .arrow {
 	width: 16px;
 	aspect-ratio: 1;
-	background-image: url('/assets/arrowWhite.png');
+	background-image: url('/bandiFesta/assets/arrowWhite.png');
 	background-size: 100%;
 	transition: 0.25s;
 	@media screen and (max-width:1023px) {
