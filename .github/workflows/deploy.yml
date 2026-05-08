@@ -1,6 +1,6 @@
 name: Deploy Static Site
 
-on:
+on: 
   push:
     branches: [ master ]
 
