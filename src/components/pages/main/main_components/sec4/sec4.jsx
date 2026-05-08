@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./sec4.css";
-import logo2 from "/assets/logo2.png"
+import logo2 from "/bandiFesta/assets/logo2.png"
 
 function MainSec4() {
     const config = useContext(configContext);
@@ -64,22 +64,8 @@ function MainSec4() {
         // console.log(`error: ${error}`);
         }
     );
+    }, [config.language]);
 
-    const handleScrollDown = () => {
-      const scrollPosition = window.scrollY;
-      const triggerPosition = document.documentElement.scrollHeight - window.innerHeight - 500; // 원하는 픽셀 위치 설정
-      if (scrollPosition > triggerPosition) {
-        setActive(true);
-      }else {
-        setActive(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScrollDown);
-    return () => {
-      window.removeEventListener('scroll', handleScrollDown);
-    };
-  }, [config.language]);
 
     return (
     <div className="Main_sec4">
@@ -109,10 +95,8 @@ function MainSec4() {
             ))}
             </Swiper>
         </div>
-        <div className="Main_sec4_bottom">
-          <div className={`Main_sec4_bottom_logoMoon ${active ? "active" : ""}`}>
+        <div className="moonLogo">
             <img src={logo2} alt="달님" />
-          </div>
         </div>
     </div>
     );

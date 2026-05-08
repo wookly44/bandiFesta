@@ -2,74 +2,47 @@
   width: 100%;
   height: 100%;
 }
-
 .swiper-slide {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.Main_sec4 .fontSubTitle {
-  /* font-size: 18px; */
-  font-weight: 400;
-}
 
 .Main_sec4 {
   width: 100%;
-  background-image: url(/bandifesta/assets/main_sec4_bg.png);
+  background-image: url('/bandiFesta/assets/main_sec4_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--color-white);
   text-align: center;
-  padding: calc( 100vw * (20 / 400)) 0 100px;
+  padding: calc( 100vw * (20 / 400)) 0 0;
   position: relative;
   overflow: hidden;
 }
-.Main_sec4  h5 {
+.Main_sec4 h5 {
   font-size: 40px;
   font-weight: 600;
 }
-.Main_sec4  p {
+.Main_sec4 p {
   font-size: 18px;
   font-weight: 400;
   margin: 30px 0;
 }
-.Main_sec4_bottom{
-  padding-top: 600px;
-  position: relative;
-  overflow: hidden;
-}
-.Main_sec4_bottom_logoMoon>img{
-  width: 250px;
-  transform: rotate(90deg) translateX(-50%);
-  transition-duration: 2s;
-  left: 50%;
-}
-.Main_sec4_bottom_logoMoon{
-  width: 1440px;
-  height: 1440px;
-  position: absolute;
-  top:50px;
-  left:50%;
-  transform: translateX(-50%) rotate(-90deg);
-  transition-duration: 2s;
+.moonLogo{
+  margin: 120px 0 220px;
   animation: MoonLight 2s infinite;
 }
-.Main_sec4_bottom_logoMoon.active{
-  transform: translateX(-50%) rotate(0deg);
+.moonLogo>img{
+  width: 250px;
+  transition-duration: 2s;
 }
-.Main_sec4_bottom_logoMoon.active>img{
-  transform: rotate(0deg);
-}
-.Main_sec4_bottom_logoMoon.active>.Main_sec4_bottom_logoMoonLight{
-  transform: rotate(0deg);
-}
-
 @keyframes MoonLight {
   0% {
     filter: drop-shadow(0 0 3px rgba(255, 223, 0, 0.4)) drop-shadow(0 0 7px rgba(255, 223, 0, 0.3)) drop-shadow(0 0 10px rgba(255, 223, 0, 0.2));
@@ -81,18 +54,10 @@
     filter: drop-shadow(0 0 3px rgba(255, 223, 0, 0.4)) drop-shadow(0 0 7px rgba(255, 223, 0, 0.3)) drop-shadow(0 0 10px rgba(255, 223, 0, 0.2));
   }
 }
-.Main_sec4_bottom_bottom{
-  position: absolute;
-  bottom: -480px;
-  left: 0;
-  transition-duration: 2s;
+.footer_top>img.active{
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 7px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
-.Main_sec4_bottom_bottom>img{
-  width: 100%;
-}
-.Main_sec4_bottom_bottom.active{
-  bottom: 0;
-}
+
 .sec4SwiperMobile{
   display: none;
 }
@@ -106,20 +71,6 @@
   .swiper .fontSubTitle{
     display: none;
   }
-  .Main_sec4_bottom_logoMoon{
-    width: calc( 100vw * (600 / 400));;
-    height: calc( 100vw * (400 / 400));;
-    top:50px;
-  }
-  .Main_sec4_bottom_logoMoon>img{
-    width: calc( 100vw * (100 / 400));
-    transform: rotate(90deg) translateX(-50%);
-    transition-duration: 2s;
-    left: 50%;
-  }
-  .Main_sec4_bottom{
-    padding-top: calc( 100vw * (350 / 400));
-  }    
   .Main_sec4  h5 {
     font-size: calc( 100vw * (20 / 400));
     font-weight: 600;
@@ -131,5 +82,10 @@
   .festivalCardTop{
     border-radius: calc( 100vw * (20 / 400));
   }
-
+  .moonLogo{
+    margin: 100px 0 120px;
+  }
+  .moonLogo>img{
+    width: calc( 100vw * (160 / 400));
+  }
 }
