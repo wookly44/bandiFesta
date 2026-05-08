@@ -17,7 +17,7 @@
 
 .Main_sec4 {
   width: 100%;
-  background-image: url('/bandiFesta/assets/main_sec4_bg.png');
+  background-image: url('../../../../../assets/main_sec4_bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--color-white);

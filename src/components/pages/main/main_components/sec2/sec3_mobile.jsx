@@ -1,7 +1,7 @@
 import "./sec3_mobile.css";
 import { useNavigate } from "react-router-dom";
-import courseBtn from "/bandiFesta/assets/btn4001.png";
-import noticeBtn from "/bandiFesta/assets/btn4002.png";
+import courseBtn from "../../../../../assets/btn4001.png";
+import noticeBtn from "../../../../../assets/btn4002.png";
 function MainSec3_mobile() {
 
     const sec3_button_notice = () => {

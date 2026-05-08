@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { editContext } from "./SubNoticeFAQ";
-import glassSearch from "/bandiFesta/assets/glass_search.png";
+import glassSearch from "../../../assets/glass_search.png";
 
 export default function FaqSearchBox(){
     

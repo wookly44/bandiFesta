@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./sec4.css";
-import logo2 from "/bandiFesta/assets/logo2.png"
+import logo2 from "../../../../../assets/logo2.png"
 
 function MainSec4() {
     const config = useContext(configContext);

@@ -6,8 +6,8 @@ import { likeFestival } from '/src/api_utils/festivalUtil';
 import { configContext } from '/src/App';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginRequest } from '../../../api_utils/loginUtil';
-import heartFill from '/bandiFesta/assets/heartFill.png';
-import heart from '/bandiFesta/assets/heart.png';
+import heartFill from '../../../assets/heartFill.png';
+import heart from '../../../assets/heart.png';
 
 function FestivalLikeButton({festivalId,userId,onChange}) {
 	const [pressed,setPressed] = useState(false);

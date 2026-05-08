@@ -9,7 +9,7 @@ import { MobileTab, MobileTabContainer } from "../../generic/MobileTab";
 import './pagemy.css';
 import { configContext } from '/src/App';
 import GenericButton from '/src/components/generic/GenericButton';
-import user2 from "/bandiFesta/assets/user2.png";
+import user2 from "../../../assets/user2.png";
 
 function UserInfo({kakaoUser,handleConfig}) {
 	const config = useContext(configContext);

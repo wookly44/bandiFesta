@@ -1,5 +1,5 @@
 import "./SubIntroMainSec4.css"
-import jidoImg from "/bandiFesta/assets/jido.png";
+import jidoImg from "../../../../assets/jido.png";
 export default function SubIntroMainSec4({ }) {
 	return <>
 		<div className="SubIntroMainSec4_wrap">

@@ -3,9 +3,9 @@ import { faqContext } from './SubNoticeFAQ' ;
 import { editContext } from './SubNoticeFAQ' ;
 import { configContext } from "../../../App";
 import GenericButton from '../../generic/GenericButton';
-import question from "/bandiFesta/assets/question.png";
-import nextPage from "/bandiFesta/assets/nextPage.png";
-import answer from "/bandiFesta/assets/answer.png";
+import question from "../../../assets/question.png";
+import nextPage from "../../../assets/nextPage.png";
+import answer from "../../../assets/answer.png";
 
 export default function FAQPageList({currentItems}){
     const datas = useContext(faqContext);

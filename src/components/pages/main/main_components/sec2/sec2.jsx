@@ -2,8 +2,8 @@ import "./sec2.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MainSec3_mobile from"./sec3_mobile"
-import mainImg from "/bandiFesta/assets/mainImg.png";
-import posterImg from "/bandiFesta/assets/poster.png";
+import mainImg from "../../../../../assets/mainImg.png";
+import posterImg from "../../../../../assets/poster.png";
 function MainSec2() {
   const Navigate = useNavigate();
 

@@ -1,5 +1,5 @@
 import "./SubCourse0.css"
-import gbgMap01 from "/bandiFesta/assets/gbg_map01.jpg";
+import gbgMap01 from "../../../assets/gbg_map01.jpg";
 export default function SubCourse0({}) {
 	return <>
 	<div>

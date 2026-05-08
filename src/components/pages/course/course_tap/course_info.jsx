@@ -1,7 +1,6 @@
-import React from "react";
 import "./CourseInfo.css";
-import gbgMap from "/bandiFesta/assets/gbg_map02.jpg";
-import peopleImg from "/bandiFesta/assets/people.png";
+import gbgMap from "../../../../assets/gbg_map02.jpg";
+import peopleImg from "../../../../assets/people.png";
 
 function CourseInfo({ getCourseTitle, points, currentSet, ClickInfo, data, currentKey }) {
   return (

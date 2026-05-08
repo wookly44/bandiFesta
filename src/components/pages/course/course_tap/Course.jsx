@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import gbgData from "../../../../data/gbg_info.json";
+import peopleImg from "../../../../assets/people.png";
+import gbgMap from "../../../../assets/gbg_map02.jpg";
 import "./Course.css";
-import peopleImg from "/bandiFesta/assets/people.png";
-import gbgMap from "/bandiFesta/assets/gbg_map02.jpg";
 import "../../../generic/lefttab.css";
 
 
@@ -118,17 +118,13 @@ const points_1023 = {
 function Course({ currentSet }) {
   const [position, setPosition] = useState({});
   const [people_height, setPeople_height] = useState({});
-  const [data, setData] = useState({});
+  const [data, setData] = useState(gbgData);
   const [currentKey, setCurrentKey] = useState("01");
   const [previous, setPrevious] = useState(currentKey);
   const [blackSpot, setBlackSpot] = useState();
   const [points, setPoints] = useState(points_1440);
   const [course_wrap_height, setCourse_wrap_height] = useState()
-  useEffect(() => {
-    axios.get("/JSON/gbg_info.json").then((response) => {
-      setData(response.data);
-    });
-  }, []);
+
 
   useEffect(() => {
     const Resize = () => {

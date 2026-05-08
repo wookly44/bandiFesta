@@ -1,10 +1,10 @@
 import "./SubIntroPreservation_sec2.css";
 import SubIntroPreservationSubTitle from "./SubIntroPreservationSubTitle";
-import info1 from "/bandiFesta/assets/info1.png";
-import infoArrow from "/bandiFesta/assets/info_arrow.png";
-import infoPeople from "/bandiFesta/assets/info_people.png";
-import info2 from "/bandiFesta/assets/info2.png";
-import info3 from "/bandiFesta/assets/info3.png";
+import info1 from "../../../../assets/info1.png";
+import infoArrow from "../../../../assets/info_arrow.png";
+import infoPeople from "../../../../assets/info_people.png";
+import info2 from "../../../../assets/info2.png";
+import info3 from "../../../../assets/info3.png";
 export default function SubIntroPreservation_sec2({}) {
   return (
     <>

@@ -1,4 +1,4 @@
-import fakeFestivalsData from '../../public/JSON/fake_festivals.json';
+import fakeFestivalsData from '../data/fake_festivals.json';
 
 // 1. 기간 타입 가짜 데이터
 export const getFestivalPeriodTypes = (params, thenCallback) => {

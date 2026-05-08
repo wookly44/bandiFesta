@@ -4,20 +4,20 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import "./sec3_top.css";
 import "swiper/css";
-import gbg01 from "/bandiFesta/assets/gbg_01.webp";
-import gbg02 from "/bandiFesta/assets/gbg_02.webp";
-import gbg03 from "/bandiFesta/assets/gbg_03.webp";
-import gbg04 from "/bandiFesta/assets/gbg_04.webp";
-import gbg05 from "/bandiFesta/assets/gbg_05.webp";
-import gbg06 from "/bandiFesta/assets/gbg_06.webp";
-import gbg07 from "/bandiFesta/assets/gbg_07.webp";
-import gbg08 from "/bandiFesta/assets/gbg_08.webp";
-import gbg09 from "/bandiFesta/assets/gbg_09.webp";
-import gbg10 from "/bandiFesta/assets/gbg_10.webp";
-import gbg11 from "/bandiFesta/assets/gbg_11.webp";
-import gbg12 from "/bandiFesta/assets/gbg_12.webp";
-import gbg13 from "/bandiFesta/assets/gbg_13.webp";
-import gbg14 from "/bandiFesta/assets/gbg_14.webp";
+import gbg01 from "../../../../../../assets/gbg_01.webp";
+import gbg02 from "../../../../../../assets/gbg_02.webp";
+import gbg03 from "../../../../../../assets/gbg_03.webp";
+import gbg04 from "../../../../../../assets/gbg_04.webp";
+import gbg05 from "../../../../../../assets/gbg_05.webp";
+import gbg06 from "../../../../../../assets/gbg_06.webp";
+import gbg07 from "../../../../../../assets/gbg_07.webp";
+import gbg08 from "../../../../../../assets/gbg_08.webp";
+import gbg09 from "../../../../../../assets/gbg_09.webp";
+import gbg10 from "../../../../../../assets/gbg_10.webp";
+import gbg11 from "../../../../../../assets/gbg_11.webp";
+import gbg12 from "../../../../../../assets/gbg_12.webp";
+import gbg13 from "../../../../../../assets/gbg_13.webp";
+import gbg14 from "../../../../../../assets/gbg_14.webp";
 function Sec3_top() {
 const Navigate = useNavigate()
 const sec3_button_festival = ()=>{

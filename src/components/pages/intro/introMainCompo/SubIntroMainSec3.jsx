@@ -1,5 +1,5 @@
 import "./SubIntroMainSec3.css"
-import singsingImg from "/bandiFesta/assets/singsingsing.png";
+import singsingImg from "../../../../assets/singsingsing.png";
 export default function SubIntroMainSec3({}) {
 	return <>
 
