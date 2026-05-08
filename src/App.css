@@ -1,18 +1,21 @@
 @font-face {
-	font-family: 'BookkBold';
-	src: url('/bandifesta/fonts/bookkmyeongjobold.ttf') format('truetype');
+    font-family: 'BookkBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BookkThin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Lt.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
 }
 @font-face {
-	font-family: 'BookkThin';
-	src: url('/bandifesta/fonts/bookkmyeongjothin.ttf') format('truetype');
-}
-@font-face {
-	font-family: 'PyeongChang';
-	src: url('/bandifesta/fonts/PyeongChangPeace-Light.ttf') format('truetype');
-}
-@font-face {
-	font-family: 'NotoSans';
-	src: url('/bandifesta/fonts/NotoSansKR-VariableFont_wght.ttf') format('truetype');
+    font-family: 'PyeongChang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
 }
 
 #root {
@@ -21,7 +24,7 @@
 }
 
 body {
-	font-family: 'NotoSans';
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 * {
@@ -199,11 +202,6 @@ ul,ol,li {
 		border-radius: calc( 100vw * (8 / 400));
 	}
 }
-
-/* 공용버튼 */
-
-
-
 
 /* notice / my */
 /* 버튼 상위 div */

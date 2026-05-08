@@ -11,7 +11,7 @@
 .MainSec3_mobile>p{
     font-size: calc( 100vw * (12 / 400));
     font-weight: 600;
-    font-family: "NotoSans";
+    font-family: 'Noto Sans KR', sans-serif;
     color: var(--color-main);
 }
 .MainSec3_mobile_button_top{
@@ -31,7 +31,7 @@
     border: none;
     font-size: calc( 100vw * (12 / 400));
     font-weight: 400;
-    font-family: "NotoSans";    
+    font-family: 'Noto Sans KR', sans-serif;    
     align-items: flex-start;
 }
 .MainSec3_mobile img{
@@ -40,7 +40,7 @@
 .MainSec3_mobile h5{
     font-size: calc( 100vw * (20 / 400));
     font-weight: 600;
-    font-family: "NotoSans";
+    font-family: 'Noto Sans KR', sans-serif;
     padding-bottom: 10px;
     text-align: start;
 }

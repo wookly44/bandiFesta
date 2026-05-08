@@ -24,7 +24,7 @@
     height: 40px;
     font-size: 18px;
     font-weight: 600;
-    font-family: "NotoSans";
+    font-family: 'Noto Sans KR', sans-serif;
     border: none;
     box-shadow: 2px 2px 2px rgba(0,0,0,.25);
     cursor: pointer;
