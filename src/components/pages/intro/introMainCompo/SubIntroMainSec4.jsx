@@ -1,5 +1,5 @@
 import "./SubIntroMainSec4.css"
-import jidoImg from "../../../../assets/jido.png";
+import event_info4 from "../../../../assets/event_info4.webp";
 export default function SubIntroMainSec4({ }) {
 	return <>
 		<div className="SubIntroMainSec4_wrap">
@@ -10,7 +10,7 @@ export default function SubIntroMainSec4({ }) {
 			</div>
 			<h2>별빛 산책로</h2>
 			<div className="jido">
-				<img src={jidoImg} alt="별빛산책로" />
+				<img src={event_info4} alt="별빛산책로" loading="lazy"/>
 			</div>
 			<div className="SubIntroMainSec4_stroll">
 				<div><p>1. 외소주방</p><p>도슭수라상 궁증음식체험과 국악공연</p></div>

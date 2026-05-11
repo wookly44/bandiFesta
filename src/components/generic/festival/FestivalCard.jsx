@@ -1,5 +1,5 @@
 import './festival.css';
-import { useEffect, useRef, useState, useContext } from 'react';
+import { useEffect, useRef, useState, useContext, memo } from 'react';
 import GenericTag from '../GenericTag';
 import { configContext, editContext } from '/src/App';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { loginRequest } from '../../../api_utils/loginUtil';
 import heartFill from '../../../assets/heartFill.png';
 import heart from '../../../assets/heart.png';
 
-function FestivalLikeButton({festivalId,userId,onChange}) {
+const FestivalLikeButton = memo(({festivalId,userId,onChange}) => {
 	const config = useContext(configContext);
 	const {toggleLike} = useContext(editContext);
 
@@ -40,9 +40,9 @@ function FestivalLikeButton({festivalId,userId,onChange}) {
 	return <div className='festivalLikeButton' onClick={likeRequest}>
 		<img className={'heart'} src={pressed?heartFill:heart} alt={'축제 좋아요 버튼'}/>
 	</div>
-}
+});
 
-function FestivalCard({festival,disableTag,userId,fontSize}) {
+const FestivalCard = memo(({festival,disableTag,userId,fontSize}) => {
 	const config = useContext(configContext);
 	const navigate = useNavigate();
 	const imgElement = useRef(null);
@@ -110,7 +110,8 @@ function FestivalCard({festival,disableTag,userId,fontSize}) {
 						?<img src={String(festival.image).replace('http://','https://')}
 						alt={festival.title} 
 						className='festivalCardImage'
-						ref={imgElement}/>
+						ref={imgElement}
+						loading="lazy"/>
 						:<></>
 					}
 						
@@ -141,15 +142,15 @@ function FestivalCard({festival,disableTag,userId,fontSize}) {
 			{(!isNull)?festival.title:''}
 		</div>
 	</div>
-}
+});
 
-function FestivalCardList({festivals,className}) {
+const FestivalCardList = memo(({festivals,className}) => {
 	const config = useContext(configContext);
 	return <div className={`festivalCardList${className?(' '+className):''}`}>
 		{festivals.map((festival,index)=>{
 			return <FestivalCard key={festival ? `${festival.festival_id}_${index}` : index} festival={festival} userId={(config.user)?config.user.id:undefined}/>
 		})}
 	</div>
-}
+});
 
 export { FestivalCardList, FestivalCard, FestivalLikeButton };

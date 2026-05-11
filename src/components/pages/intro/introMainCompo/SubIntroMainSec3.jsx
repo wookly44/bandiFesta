@@ -1,5 +1,5 @@
 import "./SubIntroMainSec3.css"
-import singsingImg from "../../../../assets/singsingsing.png";
+import event_info3 from "../../../../assets/event_info3.webp";
 export default function SubIntroMainSec3({}) {
 	return <>
 
@@ -10,7 +10,7 @@ export default function SubIntroMainSec3({}) {
 				<div></div>
 			</div>
 			<h2>국악 공연</h2>
-			<div className={'gookak'} ><img src={singsingImg} alt="국악공연" /></div>
+			<div className={'gookak'} ><img src={event_info3} alt="국악공연" loading="lazy"/></div>
 			<p>
 				국악 공연과 함께<br/>
 				가족과 함께<br/>

@@ -10,12 +10,12 @@ extend({ Water });
 
 function SceneObject({ onLoaded }) {
     const { camera: threeCamera } = useThree();
-    const gltf = useGLTF('bandifesta_scene.glb');
+    const gltf = useGLTF('/bandiFesta/bandifesta_3d.glb');
     const waterNormals = useLoader(THREE.TextureLoader, waterNormalsFile);
     
     const [scene, camera] = useMemo(() => [
-        gltf.scene.clone(), 
-        gltf.cameras && gltf.cameras.length > 0 ? gltf.cameras[0].clone() : null
+        gltf.scene, 
+        gltf.cameras && gltf.cameras.length > 0 ? gltf.cameras[0] : null
     ], [gltf.scene, gltf.cameras]);
 
     const animations = useAnimations(gltf.animations, scene);

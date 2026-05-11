@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useReducer, useMemo, useCallback, useRef } from 'react'
+import { createContext, useEffect, useState, useReducer, useMemo, useCallback, useRef, lazy, Suspense } from 'react'
 import {Contents, Reducer} from './components/pages/notice/data';
 import './App.css'
 //
@@ -9,22 +9,22 @@ import Footer from './components/footer/Footer';
 //리다이렉트
 import { RedirectLogin, RedirectMain } from './components/generic/Redirects';
 //페이지
-import PageMain 		from './components/pages/main/PageMain';
-import PageIntro 		from './components/pages/intro/PageIntro';
-import PageCourse 		from './components/pages/course/PageCourse';
-import PageNotice 		from './components/pages/notice/PageNotice';
-import PageFestival 	from './components/pages/festival/PageFestival';
-import PageMy 			from './components/pages/my/PageMy';
+const PageMain 		= lazy(() => import('./components/pages/main/PageMain'));
+const PageIntro 		= lazy(() => import('./components/pages/intro/PageIntro'));
+const PageCourse 		= lazy(() => import('./components/pages/course/PageCourse'));
+const PageNotice 		= lazy(() => import('./components/pages/notice/PageNotice'));
+const PageFestival 	= lazy(() => import('./components/pages/festival/PageFestival'));
+const PageMy 			= lazy(() => import('./components/pages/my/PageMy'));
 //디테일&작성&수정페이지
-import PageNoticeDetail 	from './components/pages/details/PageNoticeDetail';
-import PageNoticeWrite 		from './components/pages/details/PageNoticeWrite';
-import PageNoticeEdit 		from './components/pages/details/PageNoticeEdit';
-import PageQNADetail 		from './components/pages/details/PageQNADetail';
-import PageQNAWrite 		from './components/pages/details/PageQNAWrite';
-import PageAnswerWrite 		from './components/pages/details/PageAnswerWrite';
-import PageAnswerEdit 		from './components/pages/details/PageAnswerEdit';
-import PageFestivalDetail 	from './components/pages/details/PageFestivalDetail';
-import PageQNAEdit from './components/pages/details/PageQNAEdit';
+const PageNoticeDetail 	= lazy(() => import('./components/pages/details/PageNoticeDetail'));
+const PageNoticeWrite 		= lazy(() => import('./components/pages/details/PageNoticeWrite'));
+const PageNoticeEdit 		= lazy(() => import('./components/pages/details/PageNoticeEdit'));
+const PageQNADetail 		= lazy(() => import('./components/pages/details/PageQNADetail'));
+const PageQNAWrite 		= lazy(() => import('./components/pages/details/PageQNAWrite'));
+const PageAnswerWrite 		= lazy(() => import('./components/pages/details/PageAnswerWrite'));
+const PageAnswerEdit 		= lazy(() => import('./components/pages/details/PageAnswerEdit'));
+const PageFestivalDetail 	= lazy(() => import('./components/pages/details/PageFestivalDetail'));
+const PageQNAEdit 			= lazy(() => import('./components/pages/details/PageQNAEdit'));
 import { getKakaoUser, logout, unlink } from './api_utils/loginUtil';
 
 const configContext = createContext();
@@ -61,42 +61,42 @@ function App() {
 	};
 
 	//전역설정 핸들러
-	const handleConfig = {
+	const handleConfig = useMemo(() => ({
 		setFestivalView:(val)=>{
-			setConfig({
-				...config,
+			setConfig(prev => ({
+				...prev,
 				festivalView:val
-			})
+			}))
 		},
 		setLanguage:(value)=>{
-			setConfig({
-				...config,
+			setConfig(prev => ({
+				...prev,
 				language:value
-			})
+			}))
 			navigate(`/festival/${config.festivalView}`);
 		},
 		getLanguageByIndex:(index)=>{
 			return config.languages[index]
 		},
 		setKakaoUser:(obj)=>{
-			setConfig({
-				...config,
+			setConfig(prev => ({
+				...prev,
 				user:obj
-			})
+			}))
 		},
 		logout:()=>{
 			logout({
 
 			},(response)=>{
-				setConfig({
-					...config,
+				setConfig(prev => ({
+					...prev,
 					user:null
-				})
+				}))
 			},(error)=>{
-				setConfig({
-					...config,
+				setConfig(prev => ({
+					...prev,
 					user:null
-				})
+				}))
 			},()=>{
 				navigate('/')
 			})
@@ -106,20 +106,20 @@ function App() {
 			unlink({
 
 			},(response)=>{
-				setConfig({
-					...config,
+				setConfig(prev => ({
+					...prev,
 					user:null
-				})
+				}))
 			},(error)=>{
-				setConfig({
-					...config,
+				setConfig(prev => ({
+					...prev,
 					user:null
-				})
+				}))
 			},()=>{
 				navigate('/')
 			})
 		}
-	}
+	}), [config.languages, config.festivalView, navigate]);
 	//쿠키에서 유저세션확인
 	useEffect(()=>{
 		getKakaoUser({
@@ -150,7 +150,7 @@ function App() {
 		}
 	  })
 	  userId.current += 1;
-	}, [name, title, content])
+	}, [])
   
 	const editNotice = (id, content)=>{
 	  dispatch({
@@ -182,36 +182,38 @@ function App() {
   
 	const memoNotice = useMemo(()=>{
 	  return {createNotice, editNotice, removeNotice, searchNotice, increaseView, toggleLike}
-	}, [config.likedFestivals])
+	}, [createNotice, toggleLike])
 	//
 	return <>
 		<configContext.Provider value={config}>
 			<dataContext.Provider value={datas}>
 				<editContext.Provider value={memoNotice}>
 				    <Header handleConfig={handleConfig}/>
-			        <Routes>
-				        {/*리다이렉트*/}
-				        <Route exact path={'/'} element={<RedirectMain/>}/>
-				        <Route path={'/redirectLogin/:code'} element={<RedirectLogin/>}/>
-				        {/*페이지들*/}
-				        <Route path={'/main'} 			element={<PageMain/>}/>
-				        <Route path={'/intro/:tabName'} element={<PageIntro/>}/>
-				        <Route path={'/course'} element={<PageCourse/>}/>
-				        <Route path={'/course/:tabName'} element={<PageCourse/>}/>
-				        <Route path={'/notice/:tabName'} element={<PageNotice/>}/>
-				        <Route path={'/festival/:tabName'} element={<PageFestival handleConfig={handleConfig}/>}/>
-				        <Route path={'/my/:tabName'} element={<PageMy handleConfig={handleConfig}/>}/>
-				        {/*상세,작성,수정페이지*/}
-				        <Route path={'/notice/detail/:noticeId'} 	element={<PageNoticeDetail/>}/>
-				        <Route path={'/notice/write'} 				element={<PageNoticeWrite/>}/>
-				        <Route path={'/notice/edit/:noticeId'} 		element={<PageNoticeEdit/>}/>
-				        <Route path={'/qna/detail/:qnaId'} 			element={<PageQNADetail/>}/>
-				        <Route path={'/qna/edit/:qnaId'} 			element={<PageQNAEdit/>}/>
-				        <Route path={'/qna/write'} 					element={<PageQNAWrite/>}/>
-				        <Route path={'/answer/write'} 				element={<PageAnswerWrite/>}/>
-				        <Route path={'/answer/edit/:answerId'} 		element={<PageAnswerEdit/>}/>
-				        <Route path={'/festival/detail/:festivalId'} element={<PageFestivalDetail/>}/>
-			        </Routes>
+					<Suspense fallback={<div className="loadingBackdrop" />}>
+						<Routes>
+							{/*리다이렉트*/}
+							<Route exact path={'/'} element={<RedirectMain/>}/>
+							<Route path={'/redirectLogin/:code'} element={<RedirectLogin/>}/>
+							{/*페이지들*/}
+							<Route path={'/main'} 			element={<PageMain/>}/>
+							<Route path={'/intro/:tabName'} element={<PageIntro/>}/>
+							<Route path={'/course'} element={<PageCourse/>}/>
+							<Route path={'/course/:tabName'} element={<PageCourse/>}/>
+							<Route path={'/notice/:tabName'} element={<PageNotice/>}/>
+							<Route path={'/festival/:tabName'} element={<PageFestival handleConfig={handleConfig}/>}/>
+							<Route path={'/my/:tabName'} element={<PageMy handleConfig={handleConfig}/>}/>
+							{/*상세,작성,수정페이지*/}
+							<Route path={'/notice/detail/:noticeId'} 	element={<PageNoticeDetail/>}/>
+							<Route path={'/notice/write'} 				element={<PageNoticeWrite/>}/>
+							<Route path={'/notice/edit/:noticeId'} 		element={<PageNoticeEdit/>}/>
+							<Route path={'/qna/detail/:qnaId'} 			element={<PageQNADetail/>}/>
+							<Route path={'/qna/edit/:qnaId'} 			element={<PageQNAEdit/>}/>
+							<Route path={'/qna/write'} 					element={<PageQNAWrite/>}/>
+							<Route path={'/answer/write'} 				element={<PageAnswerWrite/>}/>
+							<Route path={'/answer/edit/:answerId'} 		element={<PageAnswerEdit/>}/>
+							<Route path={'/festival/detail/:festivalId'} element={<PageFestivalDetail/>}/>
+						</Routes>
+					</Suspense>
 			        <Footer/>
 				</editContext.Provider>
 			</dataContext.Provider>

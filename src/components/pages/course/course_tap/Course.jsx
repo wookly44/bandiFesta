@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import gbgData from "../../../../data/gbg_info.json";
 import peopleImg from "../../../../assets/people.png";
-import gbgMap from "../../../../assets/gbg_map02.jpg";
+import gbgMap from "../../../../assets/gbg_map.webp";
 import "./Course.css";
 import "../../../generic/lefttab.css";
 

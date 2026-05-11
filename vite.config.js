@@ -17,6 +17,10 @@ export default defineConfig({
 	  }
 	}),
 	viteImagemin({
+	  webp: {
+	    quality: 75, // 70~80 사이 권장
+	  },
+
 	  // JPG 압축 설정
 	  mozjpeg: {
 		quality: 75, // 화질을 75% 수준으로 압축 (용량 대비 효율 최적)
@@ -29,6 +33,9 @@ export default defineConfig({
 	  pngquant: {
 		quality: [0.7, 0.8],
 		speed: 4,
+	  },
+	  svgo: {
+		plugins: [{ name: 'removeViewBox', active: false }]
 	  },
 	}),],
 	base: "/bandiFesta/",

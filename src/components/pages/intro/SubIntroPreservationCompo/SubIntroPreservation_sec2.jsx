@@ -14,7 +14,7 @@ export default function SubIntroPreservation_sec2({}) {
           <div className="flex SubIntroPreservation_sec2_first">
             <ul>
               <li>
-                <img src={info1} alt="응모접수" />
+                <img src={info1} alt="응모접수" loading="lazy"/>
               </li>
               <li>
                 응모 페이지
@@ -23,11 +23,11 @@ export default function SubIntroPreservation_sec2({}) {
               </li>
             </ul>
             <div>
-              <img src={infoArrow} alt="인포화살표" />
+              <img src={infoArrow} alt="인포화살표" loading="lazy"/>
             </div>
             <ul>
               <li>
-                <img src={infoPeople} alt="응모선택" />
+                <img src={infoPeople} alt="응모선택" loading="lazy"/>
               </li>
               <li>
                 응모 선택
@@ -36,11 +36,11 @@ export default function SubIntroPreservation_sec2({}) {
               </li>
             </ul>
             <div>
-              <img src={infoArrow} alt="인포화살표" />
+              <img src={infoArrow} alt="인포화살표" loading="lazy"/>
             </div>
             <ul>
               <li>
-                <img src={info2} alt="결제진행" />
+                <img src={info2} alt="결제진행" loading="lazy"/>
               </li>
               <li>
                 결제 진행
@@ -49,11 +49,11 @@ export default function SubIntroPreservation_sec2({}) {
               </li>
             </ul>
             <div>
-              <img src={infoArrow} alt="인포화살표" />
+              <img src={infoArrow} alt="인포화살표" loading="lazy"/>
             </div>
             <ul>
               <li>
-                <img src={info3} alt="응모완료" />
+                <img src={info3} alt="응모완료" loading="lazy"/>
               </li>
               <li>
                 응모(예매)

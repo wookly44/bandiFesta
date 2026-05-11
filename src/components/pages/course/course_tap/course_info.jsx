@@ -1,5 +1,5 @@
 import "./CourseInfo.css";
-import gbgMap from "../../../../assets/gbg_map02.jpg";
+import gbgMap from "../../../../assets/gbg_map.webp";
 import peopleImg from "../../../../assets/people.png";
 
 function CourseInfo({ getCourseTitle, points, currentSet, ClickInfo, data, currentKey }) {

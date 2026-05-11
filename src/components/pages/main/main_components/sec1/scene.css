@@ -4,7 +4,7 @@
 	height:calc(80vw * (1080 / 1920));
 	max-height: 640px;
 	overflow: hidden;
-	background-image: url('../../../../../assets/main_sec4_bg.png');
+	background-image: url('../../../../../assets/main_sec4_bg.webp');
 	background-size: 100%;
 	background-position: bottom;
 	& .loadingBackdrop {

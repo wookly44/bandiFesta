@@ -27,7 +27,7 @@ function MainSec3_mobile() {
             <p>체험 코스를 확인해보세요</p>
           </div>
           <div>
-            <img src={courseBtn} alt="체험코스" />
+            <img src={courseBtn} alt="체험코스" loading="lazy"/>
           </div>
         </button>
         <button onClick={sec3_button_notice} className="flex MainSec3_mobile_button_bottom">
@@ -36,7 +36,7 @@ function MainSec3_mobile() {
             <p>공지 사항을 확인해보세요</p>
           </div>
           <div>
-            <img src={noticeBtn} alt="공지사항" />
+            <img src={noticeBtn} alt="공지사항" loading="lazy"/>
           </div>
         </button>
       </section>

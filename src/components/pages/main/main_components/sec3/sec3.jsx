@@ -8,10 +8,10 @@ function MainSec3() {
     <>
       <section className="sec3 flex">
         <div className="sec3_tree">
-          <img src={leftObj} alt="배경장식1" />
+          <img src={leftObj} alt="배경장식1" loading="lazy"/>
         </div>
         <div className="main_sec3_bottom">
-          <img src={rightObj} alt="배경장식2" />
+          <img src={rightObj} alt="배경장식2" loading="lazy"/>
         </div>
         <article className="sec3_info_title">
           <h3>알려드립니다</h3>
