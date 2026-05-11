@@ -10,7 +10,8 @@ footer div {
   height: calc((100vw * (238 / 1920)) + 130px);
   overflow: hidden;
   position: relative;
-  z-index: -1;
+  user-select: none;
+  pointer-events: none;
 }
 .f_top>img {
   position: absolute;
