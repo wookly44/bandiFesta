@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
-import { getFestivals } from "/src/api_utils/festivalUtil"
-import { configContext } from "/src/App";
+import { getFestivals } from "../../../api_utils/festivalUtil"
+import { configContext } from "../../../App";
 
 export default function FestivalScrollLoader({onChange,festivalPeriodType,festivalSortMethod,containerRef,dateValue,userId,getFavorites}) {
 	const [festivals,setFestivals] = useState([]);

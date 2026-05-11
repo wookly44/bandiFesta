@@ -1,15 +1,11 @@
 import './festival.css';
 import { useEffect, useRef, useState, useContext } from 'react';
 import GenericTag from '../GenericTag';
-import { isFestivalLiked } from '/src/api_utils/festivalUtil';
-import { likeFestival } from '/src/api_utils/festivalUtil';
-import { configContext } from '/src/App';
+import { configContext, editContext } from '/src/App';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginRequest } from '../../../api_utils/loginUtil';
 import heartFill from '../../../assets/heartFill.png';
 import heart from '../../../assets/heart.png';
-
-import { editContext } from '/src/App';
 
 function FestivalLikeButton({festivalId,userId,onChange}) {
 	const config = useContext(configContext);

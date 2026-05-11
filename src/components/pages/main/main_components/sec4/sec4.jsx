@@ -52,7 +52,7 @@ function MainSec4() {
         const data = response.data || [];
         setFestivals(data);
         if (data.length > 0) {
-            const minCount = 14;
+            const minCount = 20; // 슬라이드 개수 안전하게 상향
             let looped = [...data];
             while (looped.length < minCount) {
             looped = [...looped, ...data];
@@ -72,28 +72,40 @@ function MainSec4() {
         <div>
             <h5>인기있는 행사</h5>
             <p>다양한 축제를 통해 각 지역의 독특한 문화와 전통을 만나보세요!</p>
-            <Swiper
-            loop={true}
-            slidesPerView={6.8}
-            spaceBetween={15}
-            centeredSlides={true}
-            autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            className="mySwiper sec4Swiper"
-            >
-            {loopedFestivals.map((festival) => (
-                <SwiperSlide key={festival._loopKey}>
-                    <FestivalCard
-                        festival={festival}
-                        disableTag={true}
-                        fontSize={fontSize}
-                    />
-                </SwiperSlide>
-            ))}
-            </Swiper>
+            {loopedFestivals.length > 0 && (
+                <Swiper
+                    key={loopedFestivals.length}
+                    loop={true}
+                    slidesPerView={6.8}
+                    spaceBetween={15}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    modules={[Autoplay]}
+                    className="mySwiper sec4Swiper"
+                >
+                    {loopedFestivals.map((festival) => (
+                        <SwiperSlide key={festival._loopKey}>
+                            <FestivalCard
+                                festival={festival}
+                                disableTag={true}
+                                fontSize={fontSize}
+                            />
+                        </SwiperSlide>
+                    ))}
+                    {loopedFestivals.map((festival) => (
+                        <SwiperSlide key={festival._loopKey}>
+                            <FestivalCard
+                                festival={festival}
+                                disableTag={true}
+                                fontSize={fontSize}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            )}
         </div>
         <div className="moonLogo">
             <img src={logo2} alt="달님" />

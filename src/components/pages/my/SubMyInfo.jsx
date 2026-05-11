@@ -10,7 +10,7 @@ export default function SubMyInfo({handleTabState,index,handleConfig}) {
 		handleTabState.set(index);
 	},[])
 
-	console.log(config.user)
+	// console.log(config.user)
 	
 	return<>
 		{
