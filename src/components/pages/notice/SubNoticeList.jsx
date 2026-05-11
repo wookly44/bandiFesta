@@ -1,30 +1,29 @@
-import {useState} from 'react';
+import {useContext, useMemo} from 'react';
 import {Link} from 'react-router-dom';
 import arrowGrey from "../../../assets/arrowGrey.png";
+import { editContext } from '../../../App';
 
 function noticeList(data){
+    const {increaseView} = useContext(editContext);
 
-        const [count, setCount] = useState(0);
+    const onIncrease = ()=>{
+        increaseView(data.id);
+    }
 
-        const onIncrease = ()=>{
-            setCount(count+1);
-        }
-
-
-    return(
-        <ul key={data.id} className='noticeListM'>
-            <li className='notiNumber'>{data.id}</li>
-            <li className='notiTitle'>
-                <Link to={`/notice/detail/${data.id}`} onClick={onIncrease}>
-                    <span className='notiTitTxt'>{data.title}</span>
-                    <img className='notiArrow' src={arrowGrey} alt="notiArrow" />
-                </Link>
-            </li>
-            <li className='notiWriter'>{data.name}</li>
-            <li className='notiDate'>{data.createDate}</li>
-            <li className='notiView'>{count}</li>
-        </ul>
-    )
+    return useMemo(() => (
+        <Link to={`/notice/detail/${data.id}`} onClick={onIncrease}>
+            <ul key={data.id} className='noticeListM'>
+                <li className='notiNumber'>{data.id}</li>
+                <li className='notiTitle'>
+                        <span className='notiTitTxt'>{data.title}</span>
+                        <img className='notiArrow' src={arrowGrey} alt="notiArrow" />
+                </li>
+                <li className='notiWriter'>{data.name}</li>
+                <li className='notiDate'>{data.createDate}</li>
+                <li className='notiView'>{data.view || 0}</li>
+            </ul>
+        </Link>
+    ), [data.id, data.title, data.name, data.createDate, data.view]);
 }
 
 export default noticeList;

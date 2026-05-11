@@ -159,8 +159,15 @@ function App() {
 	  })
 	}
   
+	const increaseView = (id)=>{
+	  dispatch({
+		type: "increaseView",
+		id
+	  })
+	}
+  
 	const memoNotice = useMemo(()=>{
-	  return {createNotice, editNotice, removeNotice, searchNotice}
+	  return {createNotice, editNotice, removeNotice, searchNotice, increaseView}
 	}, [])
 	//
 	return <>
