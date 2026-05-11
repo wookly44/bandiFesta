@@ -1,1 +1,0 @@
-import{j as s}from"./index-grRu3H6q.js";const n="/bandiFesta/assets/bannerLogo-iO1C_Lup.png";function o({children:a}){return s.jsxs("div",{className:"topBanner",children:[s.jsx("img",{className:"logo",src:n,alt:"배너로고"}),s.jsx("div",{className:"title",children:a})]})}export{o as T};
