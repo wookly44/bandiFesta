@@ -21,7 +21,7 @@ export default function SubMyInfo({handleTabState,index,handleConfig}) {
 					<div className="myInfoWrap">
 						<div className="myInfoList">
 							<h4 className="fontSubTitle">아이디</h4>
-							<p className="fontMain">#{config.user.name}</p>
+							<p className="fontMain">#{config.user.username}</p>
 						</div>
 						<div className="myInfoList">
 							<h4 className="fontSubTitle">이름</h4>
@@ -29,19 +29,19 @@ export default function SubMyInfo({handleTabState,index,handleConfig}) {
 						</div>
 						<div className="myInfoList">
 							<h4 className="fontSubTitle">성별</h4>
-							<p className="fontMain">.</p>
+							<p className="fontMain">{config.user.gender}</p>
 						</div>
 						<div className="myInfoList">
 							<h4 className="fontSubTitle">생년월일</h4>
-							<p className="fontMain">.</p>
+							<p className="fontMain">{config.user.birth_date}</p>
 						</div>
 						<div className="myInfoList">
 							<h4 className="fontSubTitle">전화번호</h4>
-							<p className="fontMain">.</p>
+							<p className="fontMain">{config.user.phone_number}</p>
 						</div>
 						<div className="myInfoList">
 							<h4 className="fontSubTitle">주소</h4>
-							<p className="fontMain">.</p>
+							<p className="fontMain">{config.user.address}</p>
 						</div>
 					</div>
 				</div>

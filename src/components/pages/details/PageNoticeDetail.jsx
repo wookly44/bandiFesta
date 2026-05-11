@@ -43,9 +43,9 @@ function PageNoticeDetail(){
                 </article>
                 <article className='noticeBtn'>
                     <GenericButton to="/notice/main">목록</GenericButton>
-                    {config.user===null ? "" : <>
+                    {config.user?.role === 'admin' ? <>
                     <GenericButton to={`/notice/edit/${datas[data-1].id}`}>수정</GenericButton>
-                    <GenericButton onClick={removeBtn}>삭제</GenericButton> </>}
+                    <GenericButton onClick={removeBtn}>삭제</GenericButton> </> : ""}
                 </article>
             </section>
         </>

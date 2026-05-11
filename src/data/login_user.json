@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "user_id": 3502010371,
+      "role":"admin",
+      "username": "manager01",
+      "nickname": "관리자",
+      "phone_number": "010-1234-5678",
+      "email": "[EMAIL_ADDRESS]",
+      "profile": "/bandiFesta/assets/user.jpg",
+      "thumbnail": "/bandiFesta/assets/user.jpg",
+      "birth_date": "1990-01-01",
+      "gender": "여성",
+      "address": "서울특별시 강남구 테헤란로 123"
+    }
+  ]
+}
+
+

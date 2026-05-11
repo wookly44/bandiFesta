@@ -33,7 +33,7 @@ function UserInfo({kakaoUser,handleConfig}) {
 		}
 		<div className="nameAndLogout">
 			<div className="fontSubTitle name">
-				{kakaoUser?('#'+kakaoUser.name):''}
+				{kakaoUser?('#'+kakaoUser.username):''}
 			</div>
 			<GenericButton onClick={logoutCallback}>로그아웃</GenericButton>
 		</div>

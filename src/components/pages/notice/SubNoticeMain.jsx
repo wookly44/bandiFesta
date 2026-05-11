@@ -54,9 +54,9 @@ function SubNoticeMain({handleTabState,index}) {
                     {currentItems && currentItems.map((data)=>
                     <SubNoticeList key={data.id} {...data} />)}
                 </div>
-                {config.user===null ? "" : <div className='btnWrap'>
+                {config.user?.role === 'admin' ? <div className='btnWrap'>
                     <GenericButton to="/notice/write">글쓰기</GenericButton>
-                </div>}
+                </div> : ""}
             </div>
             <Paginate pageCount={pageCount} handlePageClick={handlePageClick}/>
 		</div>
