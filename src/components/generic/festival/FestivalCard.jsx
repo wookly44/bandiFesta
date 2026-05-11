@@ -9,48 +9,38 @@ import { loginRequest } from '../../../api_utils/loginUtil';
 import heartFill from '../../../assets/heartFill.png';
 import heart from '../../../assets/heart.png';
 
-function FestivalLikeButton({festivalId,userId,onChange}) {
-	const [pressed,setPressed] = useState(false);
-	const config = useContext(configContext);
-	//최초 마운트시 좋아요여부 확인
-	useEffect(()=>{
-		// console.log(userId);
-		if(!userId) {return;}
-		isFestivalLiked({
-			userId:userId,
-			festivalId:festivalId
-		},(response2)=>{
-			// console.log(Boolean(response2.data))
-			setPressed(Boolean(response2.data));
-		},(error2)=>{
+import { editContext } from '/src/App';
 
-		})
-	},[userId])
+function FestivalLikeButton({festivalId,userId,onChange}) {
+	const config = useContext(configContext);
+	const {toggleLike} = useContext(editContext);
+
+	// 전역 상태에서 현재 축제의 좋아요 여부 확인
+	const pressed = config.likedFestivals.includes(festivalId);
+
 	//좋아요버튼 콜백
-	const likeRequest = ()=>{
+	const likeRequest = (e)=>{
+		e.stopPropagation(); // 부모 요소로의 이벤트 전파 방지
+		
 		if(!userId) {
 			//로그아웃 상태일 때 로그인 요청
 			if (config.language==='Kor') {
-				if (confirm('로그인이 필요한 서비스입니다. 카카오 계정으로 로그인하시겠습니까? ')) {
+				if (window.confirm('로그인이 필요한 서비스입니다. 카카오 계정으로 로그인하시겠습니까? ')) {
 					loginRequest();
 				}
 			}
 			return;
 		}
-		likeFestival({
-			userId:userId,
-			festivalId:festivalId,
-			flag:String(!pressed)
-		},(response2)=>{
-			//좋아요 반영
-			setPressed(!pressed);
-			if (onChange) {
-				onChange(!pressed);
-			}
-		},(error2)=>{
 
-		})
+		// 전역 상태 토글 함수 호출
+		toggleLike(festivalId);
+
+		// 외부 콜백 실행 (필요한 경우)
+		if (onChange) {
+			onChange(!pressed);
+		}
 	}
+
 	return <div className='festivalLikeButton' onClick={likeRequest}>
 		<img className={'heart'} src={pressed?heartFill:heart} alt={'축제 좋아요 버튼'}/>
 	</div>

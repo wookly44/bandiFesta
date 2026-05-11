@@ -44,8 +44,22 @@ function App() {
 		],
 		language:'Kor',
 		user:null,
-		festivalView:'gallery'
+		festivalView:'gallery',
+		likedFestivals: [] // 좋아요한 축제 ID 목록 추가
 	})
+
+	const toggleLike = (festivalId) => {
+		setConfig(prev => {
+			const isLiked = prev.likedFestivals.includes(festivalId);
+			return {
+				...prev,
+				likedFestivals: isLiked 
+					? prev.likedFestivals.filter(id => id !== festivalId)
+					: [...prev.likedFestivals, festivalId]
+			};
+		});
+	};
+
 	//전역설정 핸들러
 	const handleConfig = {
 		setFestivalView:(val)=>{
@@ -167,8 +181,8 @@ function App() {
 	}
   
 	const memoNotice = useMemo(()=>{
-	  return {createNotice, editNotice, removeNotice, searchNotice, increaseView}
-	}, [])
+	  return {createNotice, editNotice, removeNotice, searchNotice, increaseView, toggleLike}
+	}, [config.likedFestivals])
 	//
 	return <>
 		<configContext.Provider value={config}>

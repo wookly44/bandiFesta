@@ -18,11 +18,27 @@ export const getFestivalSortMethods = (params, thenCallback) => {
 export const getFestivals = (params, thenCallback, finallyCallback) => {
     // console.log("Mock: getFestivals 호출됨", params);
     
-    // 실제 백엔드 대신 보낼 가짜 데이터
-    const fakeData = fakeFestivalsData;
+    let allData = [...fakeFestivalsData.data];
 
-    // 에러 없이 즉시 성공 콜백 실행
-    if (thenCallback) thenCallback(fakeData);
+    // 찜한 목록(Favorites) 요청 시 필터링 로직 추가
+    if (params.getFavorites && params.likedFestivals) {
+        allData = allData.filter(festival => 
+            params.likedFestivals.includes(festival.festival_id)
+        );
+    }
+
+    // 페이징 처리 (모의 구현)
+    const itemsPerPage = params.itemsPerPage || 12;
+    const pageNum = params.pageNum || 1;
+    const startIndex = (pageNum - 1) * itemsPerPage;
+    const pagedData = allData.slice(startIndex, startIndex + itemsPerPage);
+
+    const fakeResponse = { 
+        data: pagedData,
+        totalCount: allData.length 
+    };
+
+    if (thenCallback) thenCallback(fakeResponse);
     if (finallyCallback) finallyCallback();
 };
 

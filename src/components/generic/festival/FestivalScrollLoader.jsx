@@ -23,7 +23,8 @@ export default function FestivalScrollLoader({onChange,festivalPeriodType,festiv
 			sortMethod:festivalSortMethod||0,
 			dateValue:dateValue?(parseInt(dateValue)):(new Date().getTime()),
 			userId:userId||0,
-			getFavorites:getFavorites||false
+			getFavorites:getFavorites||false,
+			likedFestivals: config.likedFestivals
 		},(response)=>{
 			// console.log(response);
 			setLoading(false);
@@ -89,7 +90,8 @@ export default function FestivalScrollLoader({onChange,festivalPeriodType,festiv
 				sortMethod:festivalSortMethod||0,
 				dateValue:dateValue?(parseInt(dateValue)):(new Date().getTime()),
 				userId:userId||0,
-				getFavorites:getFavorites||false
+				getFavorites:getFavorites||false,
+				likedFestivals: config.likedFestivals
 			},(response)=>{
 				// console.log(response);
 				if (response.data.length>0) {
