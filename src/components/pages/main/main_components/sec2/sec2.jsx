@@ -20,14 +20,12 @@ function MainSec2() {
               <br />
               경복궁 별빛 야행에 대해 알아보세요.
             </h3>
-          </div>
-          <div className="sec2_button" onClick={sec2ButtonClick}>
-            보러가기
+            <div className="sec2_button" onClick={sec2ButtonClick}>보러가기</div>
           </div>
         </div>
         <div className="sec2_img">
-          <img src={mainImg} alt="sec2_img" fetchpriority="high" />
-          <img src={posterImg} alt="sec2_mobile_img" loading="lazy" />
+          <img src={mainImg} alt="메인 페스티벌 소개" fetchpriority="high" width="1100" height="619" />
+          <img src={posterImg} alt="메인 페스티벌 포스터" loading="lazy" width="400" height="533" />
         </div>
         <MainSec3_mobile />
       </section>

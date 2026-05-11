@@ -8,8 +8,12 @@ import waterNormalsFile from '../../../../../assets/waternormals.jpeg';
 
 extend({ Water });
 
-function SceneObject({ onLoaded }) {
+function SceneObject({ onLoaded, shouldRender }) {
     const { camera: threeCamera } = useThree();
+    
+    // shouldRender가 false일 때는 아무것도 하지 않음 (네트워크 및 CPU 점유 방지)
+    if (!shouldRender) return null;
+
     const gltf = useGLTF('/bandiFesta/bandifesta_3d.glb');
     const waterNormals = useLoader(THREE.TextureLoader, waterNormalsFile);
     
@@ -85,10 +89,10 @@ export default function Scene() {
     const { ref: sceneRef, inView } = useInView({ threshold: 0 });
 
     useEffect(() => {
-        // 메인 스레드 부담을 줄이기 위해 500ms 후 3D 렌더링 시작
+        // 메인 스레드 부담을 완전히 없애기 위해 1.5초 후 3D 렌더링 시작
         const renderTimer = setTimeout(() => {
             setShouldRender(true);
-        }, 500);
+        }, 1500);
 
         return () => clearTimeout(renderTimer);
     }, []);
@@ -122,7 +126,7 @@ export default function Scene() {
                     gl={{ antialias: true, powerPreference: "high-performance" }}
                 >
                     <Suspense fallback={null}>
-                        <SceneObject onLoaded={() => setLoading(false)} />
+                        <SceneObject onLoaded={() => setLoading(false)} shouldRender={shouldRender} />
                     </Suspense>
                 </Canvas>
             )}

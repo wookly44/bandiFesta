@@ -16,7 +16,7 @@
 .sec2_img>img{
     width: 1100px;
     height: auto;
-    aspect-ratio: 1100/600;
+    aspect-ratio: 1100/619;
 }
 .sec2_wrap{
     width: 1440px;
@@ -82,7 +82,7 @@
         .sec2_img>img{
             width: 95%;
             margin: 0 auto;
-            aspect-ratio: 900/1100;
+            aspect-ratio: 3 / 4;
         }
         .sec2_wrap{
             padding-left: calc( 100vw * (10 / 400));
