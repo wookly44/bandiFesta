@@ -190,29 +190,31 @@ function App() {
 				<editContext.Provider value={memoNotice}>
 				    <Header handleConfig={handleConfig}/>
 					<Suspense fallback={<div className="loadingBackdrop" />}>
-						<Routes>
-							{/*리다이렉트*/}
-							<Route exact path={'/'} element={<RedirectMain/>}/>
-							<Route path={'/redirectLogin/:code'} element={<RedirectLogin/>}/>
-							{/*페이지들*/}
-							<Route path={'/main'} 			element={<PageMain/>}/>
-							<Route path={'/intro/:tabName'} element={<PageIntro/>}/>
-							<Route path={'/course'} element={<PageCourse/>}/>
-							<Route path={'/course/:tabName'} element={<PageCourse/>}/>
-							<Route path={'/notice/:tabName'} element={<PageNotice/>}/>
-							<Route path={'/festival/:tabName'} element={<PageFestival handleConfig={handleConfig}/>}/>
-							<Route path={'/my/:tabName'} element={<PageMy handleConfig={handleConfig}/>}/>
-							{/*상세,작성,수정페이지*/}
-							<Route path={'/notice/detail/:noticeId'} 	element={<PageNoticeDetail/>}/>
-							<Route path={'/notice/write'} 				element={<PageNoticeWrite/>}/>
-							<Route path={'/notice/edit/:noticeId'} 		element={<PageNoticeEdit/>}/>
-							<Route path={'/qna/detail/:qnaId'} 			element={<PageQNADetail/>}/>
-							<Route path={'/qna/edit/:qnaId'} 			element={<PageQNAEdit/>}/>
-							<Route path={'/qna/write'} 					element={<PageQNAWrite/>}/>
-							<Route path={'/answer/write'} 				element={<PageAnswerWrite/>}/>
-							<Route path={'/answer/edit/:answerId'} 		element={<PageAnswerEdit/>}/>
-							<Route path={'/festival/detail/:festivalId'} element={<PageFestivalDetail/>}/>
-						</Routes>
+						<main id="main-content">
+							<Routes>
+								{/*리다이렉트*/}
+								<Route exact path={'/'} element={<RedirectMain/>}/>
+								<Route path={'/redirectLogin/:code'} element={<RedirectLogin/>}/>
+								{/*페이지들*/}
+								<Route path={'/main'} 			element={<PageMain/>}/>
+								<Route path={'/intro/:tabName'} element={<PageIntro/>}/>
+								<Route path={'/course'} element={<PageCourse/>}/>
+								<Route path={'/course/:tabName'} element={<PageCourse/>}/>
+								<Route path={'/notice/:tabName'} element={<PageNotice/>}/>
+								<Route path={'/festival/:tabName'} element={<PageFestival handleConfig={handleConfig}/>}/>
+								<Route path={'/my/:tabName'} element={<PageMy handleConfig={handleConfig}/>}/>
+								{/*상세,작성,수정페이지*/}
+								<Route path={'/notice/detail/:noticeId'} 	element={<PageNoticeDetail/>}/>
+								<Route path={'/notice/write'} 				element={<PageNoticeWrite/>}/>
+								<Route path={'/notice/edit/:noticeId'} 		element={<PageNoticeEdit/>}/>
+								<Route path={'/qna/detail/:qnaId'} 			element={<PageQNADetail/>}/>
+								<Route path={'/qna/edit/:qnaId'} 			element={<PageQNAEdit/>}/>
+								<Route path={'/qna/write'} 					element={<PageQNAWrite/>}/>
+								<Route path={'/answer/write'} 				element={<PageAnswerWrite/>}/>
+								<Route path={'/answer/edit/:answerId'} 		element={<PageAnswerEdit/>}/>
+								<Route path={'/festival/detail/:festivalId'} element={<PageFestivalDetail/>}/>
+							</Routes>
+						</main>
 					</Suspense>
 			        <Footer/>
 				</editContext.Provider>

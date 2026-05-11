@@ -41,17 +41,24 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	aspect-ratio: 4/3;
 }
 
 .festivalCardList {
 	display: grid;
 	gap: 48px;
 	grid-template-columns: repeat(4,1fr);
-	@media screen and (max-width:1439px) {
+}
+
+@media screen and (max-width:1439px) {
+	.festivalCardList {
 		gap: 15px;
 		grid-template-columns: repeat(3,1fr);
 	}
-	@media screen and (max-width:1023px) {
+}
+
+@media screen and (max-width:1023px) {
+	.festivalCardList {
 		gap: calc( 100vw * (10 / 400));
 		grid-template-columns: repeat(2,1fr);
 	}
@@ -71,7 +78,10 @@
 	position: relative;
 	padding-left: 16px;
 	outline: none;
-	@media screen and (max-width:1023px) {
+}
+
+@media screen and (max-width:1023px) {
+	.festivalSelect {
 		padding-left: calc( 100vw * (16 / 400));
 		width: calc( 100vw * (130 / 400));
 		height: calc( 100vw * (35 / 400));
@@ -83,7 +93,10 @@
 	border-color: #ccc;
 	border-style: solid;
 	border-width: 0 1px 1px 1px;
-	@media screen and (max-width:1023px) {
+}
+
+@media screen and (max-width:1023px) {
+	.festivalSelect>option {
 		padding-left: calc( 100vw * (16 / 400));
 		height: calc( 100vw * (32 / 400));
 	}
@@ -103,7 +116,10 @@
 	transform: translateY(-50%) rotate(90deg);
 	transform-origin: 50% 50%;
 	z-index: 32;
-	@media screen and (max-width:1023px) {
+}
+
+@media screen and (max-width:1023px) {
+	.festivalSelectArrow {
 		right: calc( 100vw * (16 / 400));
 		width: calc( 100vw * (18 / 400));
 		height: calc( 100vw * (18 / 400));
@@ -124,7 +140,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@media screen and (max-width:1023px) {
+}
+
+@media screen and (max-width:1023px) {
+	.festivalLikeButton {
 		width: calc( 100vw * (27 / 400));
 		height: calc( 100vw * (27 / 400));
 	}
@@ -136,7 +155,10 @@
 	height: 20px;
 	object-position: center;
 	object-fit: fill;
-	@media screen and (max-width:1023px) {
+}
+
+@media screen and (max-width:1023px) {
+	.festivalLikeButton>.heart {
 		width: calc( 100vw * (16 / 400));
 		height: calc( 100vw * (16 / 400));
 	}

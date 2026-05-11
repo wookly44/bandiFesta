@@ -1,35 +1,40 @@
 .scene {
 	position: relative;
 	width:100vw;
-	height:calc(80vw * (1080 / 1920));
+	aspect-ratio: 1920 / 1080;
+	height: auto;
 	max-height: 640px;
+	min-height: 200px;
 	overflow: hidden;
 	background-image: url('../../../../../assets/main_sec4_bg.webp');
 	background-size: 100%;
 	background-position: bottom;
-	& .loadingBackdrop {
-		top:50%;
-		left:50%;
-		position: absolute;
-		width: 125%;
-		height: 125%;
-		background-color: #999;
-		background-image: url('../../../../../assets/scene_capture.webp');
-		background-size: 85%;
-		background-position: center;
-		background-repeat: no-repeat;
-		transform: translate(-50%, -50%);
-		filter: blur(4px);
-		opacity: 1;
-		transition: opacity 2.5s;
-		&.hidden {
-			opacity: 0;
-		}
-	}
-	& .canvas {
-		width: 100% !important;
-        height: 100% !important;
-		will-change: transform;
-        transform: translateZ(0);
-	}
+}
+
+.scene .loadingBackdrop {
+	top:50%;
+	left:50%;
+	position: absolute;
+	width: 125%;
+	height: 125%;
+	background-color: #999;
+	background-image: url('../../../../../assets/scene_capture.webp');
+	background-size: 85%;
+	background-position: center;
+	background-repeat: no-repeat;
+	transform: translate(-50%, -50%);
+	filter: blur(4px);
+	opacity: 1;
+	transition: opacity 2.5s;
+}
+
+.scene .loadingBackdrop.hidden {
+	opacity: 0;
+}
+
+.scene .canvas {
+	width: 100% !important;
+	height: 100% !important;
+	will-change: transform;
+	transform: translateZ(0);
 }

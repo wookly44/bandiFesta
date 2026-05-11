@@ -81,7 +81,17 @@ function SceneObject({ onLoaded }) {
 export default function Scene() {
     const canvasRef = useRef();
     const [loading, setLoading] = useState(true);
+    const [shouldRender, setShouldRender] = useState(false);
     const { ref: sceneRef, inView } = useInView({ threshold: 0 });
+
+    useEffect(() => {
+        // 메인 스레드 부담을 줄이기 위해 500ms 후 3D 렌더링 시작
+        const renderTimer = setTimeout(() => {
+            setShouldRender(true);
+        }, 500);
+
+        return () => clearTimeout(renderTimer);
+    }, []);
 
     useEffect(() => {
         let timer;
@@ -104,16 +114,18 @@ export default function Scene() {
     return (
         <div className="scene" ref={sceneRef}>
             <div className={`loadingBackdrop${!loading ? ' hidden' : ''}`} />
-            <Canvas
-                className="canvas"
-                ref={canvasRef}
-                frameloop={inView ? 'always' : 'demand'}
-                gl={{ antialias: true, powerPreference: "high-performance" }}
-            >
-                <Suspense fallback={null}>
-                    <SceneObject onLoaded={() => setLoading(false)} />
-                </Suspense>
-            </Canvas>
+            {shouldRender && (
+                <Canvas
+                    className="canvas"
+                    ref={canvasRef}
+                    frameloop={inView ? 'always' : 'demand'}
+                    gl={{ antialias: true, powerPreference: "high-performance" }}
+                >
+                    <Suspense fallback={null}>
+                        <SceneObject onLoaded={() => setLoading(false)} />
+                    </Suspense>
+                </Canvas>
+            )}
         </div>
     );
 }
