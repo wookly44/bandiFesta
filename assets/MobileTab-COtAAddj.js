@@ -1,1 +1,0 @@
-import{j as t}from"./index-CCSmmR8-.js";import{u as r}from"./vendor-core-E5n4ghOf.js";function m({children:a,to:i,active:n,onClick:e}){const o=r(),s=()=>{i&&o(i)};return t.jsx("div",{className:`mobileTab fontSubTitle${n?" active":""}`,onClick:e||s,children:a})}function c({children:a}){return t.jsx("div",{className:"mobileTabContainer",children:a})}export{c as M,m as a};
