@@ -71,19 +71,20 @@
   .swiper .fontSubTitle{
     display: none;
   }
-  .Main_sec4  h5 {
-    font-size: calc( 100vw * (20 / 400));
-    font-weight: 600;
-    padding-bottom: calc( 100vw * (20 / 400));;
+  .Main_sec4{
+    padding: 0;
   }
-  .Main_sec4  p {
+  .Main_sec4 h5 {
+    display: none;
+  }
+  .Main_sec4 p {
     display: none;
   }
   .festivalCardTop{
     border-radius: calc( 100vw * (20 / 400));
   }
   .moonLogo{
-    margin: 100px 0 120px;
+    margin: 10vw 0 35vw;
   }
   .moonLogo>img{
     width: calc( 100vw * (160 / 400));

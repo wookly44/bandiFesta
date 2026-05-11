@@ -4,13 +4,15 @@ import courseBtn from "../../../../../assets/btn4001.png";
 import noticeBtn from "../../../../../assets/btn4002.png";
 function MainSec3_mobile() {
 
-    const sec3_button_notice = () => {
-        Navigate("/notice/main");
-      };
-    const Navigate = useNavigate()
-    const sec3_button_course = ()=>{
-    Navigate("/course");
-}
+  const Navigate = useNavigate()
+  const sec3_button_notice = () => {
+    Navigate("/notice/main");
+    window.scrollTo(0, 0);
+  };
+  const sec3_button_course = ()=>{
+    Navigate("/course/min40");
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <section className="MainSec3_mobile flex">

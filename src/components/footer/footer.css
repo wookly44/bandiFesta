@@ -1,26 +1,27 @@
 footer {
-  position: relative;
+  margin-top: calc((-100vw * (238 / 1920)) - 130px);
 }
 footer div {
   font-size: 0;
 }
 /* top animation */
 .f_top {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: calc((100vw * (238 / 1920)) + 300px);
-  overflow: hidden
+  height: calc((100vw * (238 / 1920)) + 130px);
+  overflow: hidden;
+  position: relative;
 }
 .f_top>img {
+  position: absolute;
+  bottom: -100%;
   width: 100%;
   font-size: 0;
   display: block;
   transition-duration: 1.5s;
-  padding-top: calc(100vw * (238 / 1920));
 }
 .f_top>img.active {
-  padding-top: 7px;
+  bottom: 0;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 .f_top>.mobile{
   display: none;
@@ -56,14 +57,10 @@ footer div {
 .f_btm .info_wrap>ul:not(:first-child) {
   padding-top: 20px;
 }
-.f_btm .info_01>li {
-  font-size: 16px;
-  font-weight: 400;
-}
 .f_btm .APILOGO img {
   height: 45px;
 }
-.f_btm .info_wrap li:not(:last-child)::after {
+.f_btm .info_wrap>ul>li:not(:last-child)::after {
   content: "";
   width: 1px;
   height: 10px;
@@ -74,24 +71,15 @@ footer div {
   right: -15px;
 }
 @media screen and (max-width:1439px) {
-  .f_top {
-    height: calc((100vw * (238 / 1920)) + 220px);
-  }
   .f_btm>div {
     width: 1024px;
     padding: 32px 0;
   }
-  .f_btm .info_01>li {
-    font-size: 14px;
-  }
-  .f_btm .info_wrap li {
+  .f_btm .info_wrap>ul>li {
     font-size: 12px;
   }
 }
 @media screen and (max-width:1023px) {
-  .f_top {
-    height: calc((100vw * (238 / 1920)) + calc((100vw * (353 / 400))));
-  }
   .f_top>img {
 	padding-top: calc(100vw * (353 / 400));
   }
@@ -123,19 +111,16 @@ footer div {
   .f_btm .info_wrap>ul:not(:first-child) {
 	padding-top: calc(100vw * (10 / 400));
   }
-  .f_btm .info_wrap li {
-    font-size: calc(100vw * (10 / 400));
+  .f_btm .info_wrap>ul>li {
+    font-size: 2.4vw;
     font-weight: 400;
     position: relative;
-	text-align: center;
+	  text-align: center;
   }
-  .f_btm .info_wrap li:not(:last-child)::after {
-	width: calc(100vw * (1 / 400));
-	height: calc(100vw * (10 / 400));
-	right: calc(-100vw * (5 / 400));
-  }
-  .f_btm .info_01 li {
-    font-size: calc(100vw * (12 / 400));
+  .f_btm .info_wrap>ul>li:not(:last-child)::after {
+	  width: calc(100vw * (1 / 400));
+	  height: calc(100vw * (10 / 400));
+	  right: calc(-100vw * (5 / 400));
   }
   .f_btm .APILOGO img {
     height: calc(100vw * (20 / 400));

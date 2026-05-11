@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getFestivalDetail } from "/src/api_utils/festivalUtil";
 import TopBanner from "../../generic/TopBanner";
 import './pagefestivaldetail.css';
@@ -9,7 +9,7 @@ import { configContext } from '/src/App';
 import { FestivalLikeButton } from "../../generic/festival/FestivalCard";
 import GenericButton from '/src/components/generic/GenericButton'
 import Loading from '/src/components/generic/Loading'
-import GoBack from "../../generic/GoBack";
+import GoTop from "../../generic/GoTop";
 
 function LikeIndicator({festival}) {
 	const config = useContext(configContext)
@@ -30,7 +30,7 @@ function LikeIndicator({festival}) {
 			setCount(count-1);
 		}
 	}
-	return <div className="likeIndicator fontMain">
+	return config.user ? <div className="likeIndicator fontMain">
 		{
 			festival
 			?<FestivalLikeButton festivalId={festival.festival_id} userId={config.user?config.user.id:null} onChange={onChangeCallback}/>
@@ -39,7 +39,7 @@ function LikeIndicator({festival}) {
 		<div className="fontSubTitle">
 			{count}
 		</div>
-	</div>
+	</div> : <></>
 }
 
 function FestivalContent({festival}) {
@@ -215,7 +215,6 @@ function FestivalContent({festival}) {
 }
 
 export default function PageFestivalDetail({}) {
-	const navigate = useNavigate();
 	const { festivalId } = useParams(); //festivalId
 	const [ festival,setFestival ] = useState(null);
 	useEffect(()=>{
@@ -241,6 +240,6 @@ export default function PageFestivalDetail({}) {
 				
 			</div>
 		</div>
-		<GoBack/>
+		<GoTop/>
 	</>
 }

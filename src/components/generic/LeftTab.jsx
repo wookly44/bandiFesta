@@ -1,6 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './lefttab.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 function LeftTabTitle({children}) {
 	return <div className='leftTabTitle fontSubTitle'>
@@ -22,22 +22,36 @@ function LeftTab({children,to,active,onClick}) {
 
 function LeftTabContainer({children}) {
 	const [top, setTop] = useState(0);
+	const wrapperRef = useRef(null);
+	const containerRef = useRef(null);
 	const offsetY = 280
 	useEffect(() => {
 		const handleScroll = () => {
-			const scrollTop = window.scrollY - offsetY;
+			if(!wrapperRef.current || !containerRef.current) return;
+			
+			const wrapperHeight = wrapperRef.current.offsetHeight;
+			const containerHeight = containerRef.current.offsetHeight;
+			const maxTop = wrapperHeight - containerHeight;
+			
+			let scrollTop = window.scrollY - offsetY;
+			
+			// 경계값 처리: 0보다 작으면 0, maxTop보다 크면 maxTop
+			if (scrollTop < 0) scrollTop = 0;
+			if (scrollTop > maxTop) scrollTop = Math.max(0, maxTop);
+			
 			setTop(scrollTop);
 		};
 
 		window.addEventListener('scroll', handleScroll);
+		handleScroll(); // 초기 위치 설정
 
-		// Cleanup on component unmount
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
-	return <div className='leftTabContainerWrapper'>	
-		<div className='leftTabContainer' style={{ marginTop: `${(top>=0?top:0)}px` }}>
+
+	return <div className='leftTabContainerWrapper' ref={wrapperRef}>	
+		<div className='leftTabContainer' ref={containerRef} style={{ marginTop: `${top}px` }}>
 			{children}
 		</div>
 	</div>

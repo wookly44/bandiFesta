@@ -1,6 +1,6 @@
 .SubIntroMainSec1_wrap {
 	background-image: url('../../../../assets/intromain01.png');
-	width: 1050px;
+	width: 100%;
 	aspect-ratio: 1050/1450;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -9,7 +9,6 @@
 	margin-bottom: 100px;
 
 	@media screen and (max-width:1439px) {
-		width: 710px;
 		margin-bottom: 40px;
 	}
 

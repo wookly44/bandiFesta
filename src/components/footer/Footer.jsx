@@ -18,7 +18,7 @@ export default function Footer({}) {
             setActive(entry.isIntersecting);
         }
         const observer = new IntersectionObserver(handleScroll, {
-            rootMargin: "0px 0px -100px 0px",
+            rootMargin: "0px 0px 600px 0px",
         });
 
         if (footerRef.current) {
