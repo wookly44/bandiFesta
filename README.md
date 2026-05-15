@@ -6,8 +6,14 @@
 
 <br />
 
-## 🔗 링크
-- **배포 URL**: [바로가기](https://wookly44.github.io/bandiFesta/#/main)
+## 🔗 프로젝트 링크 및 히스토리
+| 구분 | 링크 | 비고 |
+|-------|--------|----------|
+| 최신 배포 | [바로가기](https://wookly44.github.io/bandiFesta/#/main) | 성능 최적화 및 업데이트 적용 버전 |
+| 이전 배포 | [바로가기](https://thesandfox.github.io/bandifesta/#/main) | 신입 시절 초기 구현 버전 |
+| 이전 저장소 | [GitHub 바로가기](https://github.com/TheSandfox/bandifesta) | 리팩토링 이전의 히스토리 보존 |
+
+### 📂 관련 문서
 - **프로젝트 기획서**: [반디페스타.pdf](https://github.com/user-attachments/files/16612303/default.pdf)
 - **Figma 디자인**: [바로가기](https://ko.fm/4Pu)
 
@@ -37,7 +43,7 @@
 ## 👥 Team Member - 팀 반딧불이
 
 | 이름 | GitHub | 담당 업무 |
-|------|--------|-----------|
+|-------|--------|----------|
 | 전인탁 | [@TheSandfox](https://github.com/TheSandfox) | 메인(3D), Header, 축제둘러보기, 로그인 및 회원가입, DB 통신용 백엔드 어플리케이션 제작 |
 | 김금주 | [@keumju](https://github.com/keumju) | 자주하는 질문(FAQ), 마이페이지(1:1 문의), 마이페이지(1:1 문의 작성 및 수정 페이지) |
 | 박채민 | [@pcm5433](https://github.com/pcm5433) | 공지사항, 공지사항 작성 및 수정 페이지, 마이페이지(회원정보) |
@@ -172,7 +178,7 @@
 
 ## 📚 프로젝트 후기
 
-이번 프로젝트에서 가장 어렵게 느껴졌던 CRUD 기능을  
+이번 프로젝트에서 가장 어렵게 느껴졌던 CRUD 기능을
 직접 맡아서 구현해보고 싶다는 생각으로 게시판 기능을 담당하게 되었습니다.  
 쉽지 않은 작업이었지만, 작성 / 수정 / 삭제 흐름을 직접 완성해보며 큰 성취감을 느꼈고,  
 이 과정을 통해 이전보다 한층 더 깊이 이해할 수 있었습니다.  
